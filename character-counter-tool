@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Character Counter Tool - Free Online Character, Word & Sentence Counter</title>
+
+  <meta name="description" content="Free online character counter tool to instantly count characters, words, sentences, and paragraphs. Fast, accurate, and SEO-friendly text analysis tool." />
+
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/character-counter/" />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+<header>
+  <h1>Character Counter Tool</h1>
+  <p>Free online tool to instantly count characters, words, sentences, and paragraphs</p>
+</header>
+
+<div class="container">
+
+  <textarea id="text" placeholder="Paste or type your text here..."></textarea>
+
+  <div class="stats">
+
+    <div class="card">
+      <div class="number" id="chars">0</div>
+      <div class="label">Characters</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="charsNoSpaces">0</div>
+      <div class="label">Characters (No Spaces)</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="words">0</div>
+      <div class="label">Words</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    This free online character counter tool helps you instantly count characters, words, sentences, and paragraphs in real time.
+    It is designed for writers, students, bloggers, developers, and SEO professionals.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Character counter<br>
+    ✔ Character counter without spaces<br>
+    ✔ Word counter<br>
+    ✔ Instant real-time updates<br>
+    ✔ 100% free online tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/word-counter/">Word Counter</a> ·
+    <a href="/case-converter/">Case Converter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Character Counter Tool
+</footer>
+
+<script>
+  const textArea = document.getElementById("text");
+
+  textArea.addEventListener("input", () => {
+    const text = textArea.value;
+
+    const chars = text.length;
+    const charsNoSpaces = text.replace(/\s/g, "").length;
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+
+    document.getElementById("chars").innerText = chars;
+    document.getElementById("charsNoSpaces").innerText = charsNoSpaces;
+    document.getElementById("words").innerText = words;
+  });
+</script>
+
+</body>
+</html>
