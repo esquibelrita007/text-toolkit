@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Readability Checker Tool</title>
+
+  <meta name="description" content="Analyze text readability, sentence complexity, and reading difficulty instantly." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/readability-checker/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      min-height: 120px;
+    }
+
+    .stat {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #222;
+    }
+
+    .score {
+      color: #ff0000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Readability Checker Tool</h1>
+  <p>Analyze text readability, sentence complexity, and reading difficulty instantly.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste text here..."></textarea>
+
+  <button class="btn" onclick="checkReadability()">Check Readability</button>
+
+  <div class="output" id="output">Readability results will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Analyze text readability, sentence complexity, and reading difficulty instantly using this free online readability checker tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Readability score analysis<br>
+    ✔ Sentence complexity checker<br>
+    ✔ Average sentence length<br>
+    ✔ Word and paragraph analysis<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/grammar-checker/">Grammar Checker</a> ·
+    <a href="/keyword-density-checker/">Keyword Density Checker</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Readability Checker Tool
+</footer>
+
+<script>
+function countSyllables(word) {
+  word = word.toLowerCase();
+
+  if (word.length <= 3) return 1;
+
+  const vowels = word.match(/[aeiouy]{1,2}/g);
+
+  return vowels ? vowels.length : 1;
+}
+
+function checkReadability() {
+  const text = document.getElementById("input").value.trim();
+  const output = document.getElementById("output");
+
+  if (!text) {
+    output.innerHTML = "Please enter text to analyze.";
+    return;
+  }
+
+  const sentences = text
+    .split(/[.!?]+/)
+    .filter(sentence => sentence.trim().length > 0);
+
+  const words = text
+    .replace(/[^a-zA-Z0-9\s]/g, "")
+    .split(/\s+/)
+    .filter(word => word.length > 0);
+
+  const paragraphs = text
+    .split(/\n+/)
+    .filter(p => p.trim().length > 0);
+
+  let syllableCount = 0;
+
+  words.forEach(word => {
+    syllableCount += countSyllables(word);
+  });
+
+  const wordCount = words.length;
+  const sentenceCount = sentences.length;
+  const paragraphCount = paragraphs.length;
+
+  const avgSentenceLength = (wordCount / sentenceCount).toFixed(1);
+
+  const fleschScore = (
+    206.835 -
+    1.015 * (wordCount / sentenceCount) -
+    84.6 * (syllableCount / wordCount)
+  ).toFixed(1);
+
+  let readingLevel = "";
+
+  if (fleschScore >= 90) {
+    readingLevel = "Very Easy";
+  } else if (fleschScore >= 80) {
+    readingLevel = "Easy";
+  } else if (fleschScore >= 70) {
+    readingLevel = "Fairly Easy";
+  } else if (fleschScore >= 60) {
+    readingLevel = "Standard";
+  } else if (fleschScore >= 50) {
+    readingLevel = "Fairly Difficult";
+  } else if (fleschScore >= 30) {
+    readingLevel = "Difficult";
+  } else {
+    readingLevel = "Very Difficult";
+  }
+
+  output.innerHTML = `
+    <div class="stat">
+      <strong>Total Words:</strong> ${wordCount}
+    </div>
+
+    <div class="stat">
+      <strong>Total Sentences:</strong> ${sentenceCount}
+    </div>
+
+    <div class="stat">
+      <strong>Total Paragraphs:</strong> ${paragraphCount}
+    </div>
+
+    <div class="stat">
+      <strong>Average Sentence Length:</strong> ${avgSentenceLength} words
+    </div>
+
+    <div class="stat">
+      <strong>Readability Score:</strong>
+      <span class="score">${fleschScore}</span>
+    </div>
+
+    <div class="stat">
+      <strong>Reading Difficulty:</strong> ${readingLevel}
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
