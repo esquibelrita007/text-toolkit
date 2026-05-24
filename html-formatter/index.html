@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HTML Formatter Tool</title>
+
+  <meta name="description" content="Format, beautify, and clean messy HTML code instantly for better readability." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/html-formatter/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      min-height: 120px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>HTML Formatter Tool</h1>
+  <p>Format, beautify, and clean messy HTML code instantly for better readability.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste HTML code here..."></textarea>
+
+  <button class="btn" onclick="formatHTML()">Format HTML</button>
+
+  <div class="output" id="output">Formatted HTML will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Format, beautify, and clean messy HTML code instantly for better readability using this free online HTML formatter tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ HTML beautifier<br>
+    ✔ Clean messy HTML code<br>
+    ✔ Improve code readability<br>
+    ✔ Instant formatting<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/json-formatter/">JSON Formatter</a> ·
+    <a href="/css-minifier/">CSS Minifier</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — HTML Formatter Tool
+</footer>
+
+<script>
+function formatHTML() {
+  const input = document.getElementById("input").value.trim();
+  const output = document.getElementById("output");
+
+  if (!input) {
+    output.innerText = "Please enter HTML code to format.";
+    return;
+  }
+
+  let formatted = "";
+  let indent = 0;
+
+  const lines = input
+    .replace(/></g, ">\n<")
+    .split("\n");
+
+  lines.forEach(line => {
+    line = line.trim();
+
+    if (line.match(/^<\/\w/)) {
+      indent--;
+    }
+
+    formatted += "  ".repeat(Math.max(indent, 0)) + line + "\n";
+
+    if (
+      line.match(/^<[^!\/].*[^\/]>$/) &&
+      !line.includes("</")
+    ) {
+      indent++;
+    }
+  });
+
+  output.innerText = formatted.trim();
+}
+</script>
+
+</body>
+</html>
