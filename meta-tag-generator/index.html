@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Meta Tag Generator Tool</title>
+
+  <meta name="description" content="Generate SEO meta tags for websites including titles, descriptions, and keywords instantly." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/meta-tag-generator/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border-radius: 10px;
+      border: 1px solid #222;
+      background: #0a0a0a;
+      color: #fff;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 12px 16px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 20px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    code {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Meta Tag Generator Tool</h1>
+  <p>Generate SEO meta tags for websites including titles, descriptions, and keywords instantly.</p>
+</header>
+
+<div class="container">
+
+  <input type="text" id="title" placeholder="Website title" />
+
+  <textarea id="description" placeholder="Meta description"></textarea>
+
+  <input type="text" id="keywords" placeholder="Keywords separated by commas" />
+
+  <button class="btn" onclick="generateMetaTags()">Generate Meta Tags</button>
+
+  <div class="output" id="output">Generated meta tags will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Generate SEO meta tags for websites including titles, descriptions, and keywords instantly using this free online meta tag generator tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Generate SEO title tags<br>
+    ✔ Generate meta descriptions<br>
+    ✔ Generate keyword tags<br>
+    ✔ Copy-ready HTML output<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/slug-generator/">Slug Generator</a> ·
+    <a href="/grammar-checker/">Grammar Checker</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Meta Tag Generator Tool
+</footer>
+
+<script>
+function generateMetaTags() {
+  const title = document.getElementById("title").value.trim();
+  const description = document.getElementById("description").value.trim();
+  const keywords = document.getElementById("keywords").value.trim();
+
+  const output = document.getElementById("output");
+
+  const metaTags = `
+<title>${title}</title>
+
+<meta name="description" content="${description}" />
+
+<meta name="keywords" content="${keywords}" />
+
+<meta name="robots" content="index, follow" />
+  `.trim();
+
+  output.textContent = metaTags;
+}
+</script>
+
+</body>
+</html>
