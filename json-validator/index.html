@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JSON Validator Tool</title>
+
+  <meta name="description" content="Validate JSON code instantly and find formatting errors with clear error messages." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/json-validator/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      min-height: 120px;
+      font-family: monospace;
+    }
+
+    .valid {
+      color: #66ff99;
+    }
+
+    .invalid {
+      color: #ff5555;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>JSON Validator Tool</h1>
+  <p>Validate JSON code instantly and find formatting errors with clear error messages.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder='Paste JSON here...'></textarea>
+
+  <button class="btn" onclick="validateJSON()">Validate JSON</button>
+
+  <div class="output" id="output">Validation results will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Validate JSON code instantly and find formatting errors with clear error messages using this free online JSON validator tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Validate JSON syntax<br>
+    ✔ Find formatting errors<br>
+    ✔ Clear error messages<br>
+    ✔ Fast developer-friendly tool<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/json-formatter/">JSON Formatter</a> ·
+    <a href="/base64-encoder-decoder/">Base64 Encoder Decoder</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — JSON Validator Tool
+</footer>
+
+<script>
+function validateJSON() {
+  const input = document.getElementById("input").value.trim();
+  const output = document.getElementById("output");
+
+  if (!input) {
+    output.innerText = "Please enter JSON to validate.";
+    return;
+  }
+
+  try {
+    JSON.parse(input);
+    output.innerHTML = '<span class="valid">Valid JSON. No syntax errors found.</span>';
+  } catch (error) {
+    output.innerHTML = '<span class="invalid">Invalid JSON:</span>\n' + error.message;
+  }
+}
+</script>
+
+</body>
+</html>
