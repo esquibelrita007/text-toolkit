@@ -118,3 +118,12 @@ footer {
   color: #777777;
   border-top: 1px solid var(--border);
 }
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
