@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="description" content="Count words, characters, and sentences instantly. Free online word counter tool." />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Word Counter - Free Online Tool</title>
-<meta name="description" content="Count words, characters, and sentences instantly. Free online word counter tool." />
+<title>Word Counter Tool - Count Words, Characters & Sentences Online Free</title>
+
+<meta name="description" content="Free online word counter tool to instantly count words, characters, sentences, and paragraphs. Fast and accurate text analysis for writers, students, and SEO." />
+
+<meta name="google-site-verification" content="_zc7UUq40MGj8KJuklER3OsWS5WtbeP4BlDl3x0P1i8" />
 
 <style>
   body {
@@ -49,7 +51,7 @@
   }
 
   textarea:focus {
-    border-color: #60a5fa;
+    border-color: #ef4444;
   }
 
   .stats {
@@ -76,14 +78,33 @@
     color: #9ca3af;
     margin-top: 5px;
   }
+
+  .seo-section {
+    margin-top: 40px;
+    line-height: 1.7;
+    color: #d1d5db;
+  }
+
+  .seo-section h2 {
+    color: white;
+    margin-top: 30px;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    color: #6b7280;
+    border-top: 1px solid #1f2937;
+  }
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Word Counter</h1>
-  <p>Instantly count words, characters, and sentences</p>
+  <h1>Word Counter Tool</h1>
+  <p>Instantly count words, characters, and sentences online</p>
 </header>
 
 <div class="container">
@@ -107,7 +128,36 @@
     </div>
   </div>
 
+  <!-- SEO CONTENT (IMPORTANT FOR GOOGLE RANKING) -->
+  <div class="seo-section">
+
+    <h2>About This Word Counter Tool</h2>
+    <p>
+      This free word counter tool helps you instantly count words, characters, sentences, and paragraphs. 
+      It is designed for writers, students, bloggers, and SEO professionals who need fast and accurate text analysis.
+    </p>
+
+    <h2>Why Use This Tool?</h2>
+    <p>
+      Manually counting words is slow and often inaccurate. This tool updates results instantly as you type, 
+      directly in your browser with no installation required.
+    </p>
+
+    <h2>Features</h2>
+    <p>
+      • Real-time word counting<br>
+      • Character counting (with and without spaces)<br>
+      • Sentence detection<br>
+      • Lightweight and fast performance
+    </p>
+
+  </div>
+
 </div>
+
+<footer>
+  © 2026 Text Toolkit - Word Counter Tool
+</footer>
 
 <script>
 const textArea = document.getElementById("text");
