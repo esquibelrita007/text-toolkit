@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HTML Minifier Tool</title>
+
+  <meta name="description" content="Minify HTML code instantly by removing extra spaces, line breaks, and comments." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/html-minifier/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      min-height: 120px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>HTML Minifier Tool</h1>
+  <p>Minify HTML code instantly by removing extra spaces, line breaks, and comments.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste HTML code here..."></textarea>
+
+  <button class="btn" onclick="minifyHTML()">Minify HTML</button>
+
+  <div class="output" id="output">Minified HTML will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Minify HTML code instantly by removing extra spaces, line breaks, and comments using this free online HTML minifier tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Remove HTML comments<br>
+    ✔ Remove unnecessary whitespace<br>
+    ✔ Compress HTML code<br>
+    ✔ Improve code size<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/html-formatter/">HTML Formatter</a> ·
+    <a href="/json-formatter/">JSON Formatter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — HTML Minifier Tool
+</footer>
+
+<script>
+function minifyHTML() {
+  const input = document.getElementById("input").value;
+  const output = document.getElementById("output");
+
+  if (!input.trim()) {
+    output.innerText = "Please enter HTML code to minify.";
+    return;
+  }
+
+  const minified = input
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/>\s+</g, "><")
+    .trim();
+
+  output.innerText = minified;
+}
+</script>
+
+</body>
+</html>
