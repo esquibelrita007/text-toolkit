@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Duplicate Line Remover Tool</title>
+
+  <meta name="description" content="Remove duplicate lines from text instantly while keeping unique lines clean and organized." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/duplicate-line-remover/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      min-height: 120px;
+    }
+
+    .stats {
+      margin-top: 10px;
+      color: #cccccc;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Duplicate Line Remover Tool</h1>
+  <p>Remove duplicate lines from text instantly while keeping unique lines clean and organized.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste text here..."></textarea>
+
+  <button class="btn" onclick="removeDuplicates()">Remove Duplicate Lines</button>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="output" id="output">Cleaned text will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Remove duplicate lines from text instantly while keeping unique lines clean and organized using this free online duplicate line remover tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Remove duplicate lines<br>
+    ✔ Preserve unique entries<br>
+    ✔ Fast text cleanup<br>
+    ✔ Simple copy-ready output<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/text-cleaner/">Text Cleaner</a> ·
+    <a href="/remove-line-breaks/">Remove Line Breaks</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Duplicate Line Remover Tool
+</footer>
+
+<script>
+function removeDuplicates() {
+
+  const input = document.getElementById("input").value;
+  const output = document.getElementById("output");
+  const stats = document.getElementById("stats");
+
+  if (!input.trim()) {
+    output.innerText = "Please enter text.";
+    stats.innerText = "";
+    return;
+  }
+
+  const lines = input
+    .split("\n")
+    .map(line => line.trim())
+    .filter(line => line !== "");
+
+  const originalCount = lines.length;
+
+  const uniqueLines = [...new Set(lines)];
+
+  const removedCount = originalCount - uniqueLines.length;
+
+  output.innerText = uniqueLines.join("\n");
+
+  stats.innerText =
+    `Original Lines: ${originalCount} | Unique Lines: ${uniqueLines.length} | Removed: ${removedCount}`;
+}
+</script>
+
+</body>
+</html>
