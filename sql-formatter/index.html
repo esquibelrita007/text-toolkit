@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SQL Formatter Tool</title>
+
+  <meta name="description" content="Format and beautify SQL queries instantly for cleaner, easier-to-read database code." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/sql-formatter/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      min-height: 120px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>SQL Formatter Tool</h1>
+  <p>Format and beautify SQL queries instantly for cleaner, easier-to-read database code.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste SQL query here..."></textarea>
+
+  <button class="btn" onclick="formatSQL()">Format SQL</button>
+
+  <div class="output" id="output">Formatted SQL will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Format and beautify SQL queries instantly for cleaner, easier-to-read database code using this free online SQL formatter tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ SQL formatter<br>
+    ✔ Beautify SQL queries<br>
+    ✔ Improve database code readability<br>
+    ✔ Instant formatting<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/json-formatter/">JSON Formatter</a> ·
+    <a href="/html-formatter/">HTML Formatter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — SQL Formatter Tool
+</footer>
+
+<script>
+function formatSQL() {
+  const input = document.getElementById("input").value.trim();
+  const output = document.getElementById("output");
+
+  if (!input) {
+    output.innerText = "Please enter SQL to format.";
+    return;
+  }
+
+  let formatted = input
+    .replace(/\s+/g, " ")
+    .replace(/\bSELECT\b/gi, "\nSELECT")
+    .replace(/\bFROM\b/gi, "\nFROM")
+    .replace(/\bWHERE\b/gi, "\nWHERE")
+    .replace(/\bGROUP BY\b/gi, "\nGROUP BY")
+    .replace(/\bORDER BY\b/gi, "\nORDER BY")
+    .replace(/\bHAVING\b/gi, "\nHAVING")
+    .replace(/\bJOIN\b/gi, "\nJOIN")
+    .replace(/\bLEFT JOIN\b/gi, "\nLEFT JOIN")
+    .replace(/\bRIGHT JOIN\b/gi, "\nRIGHT JOIN")
+    .replace(/\bINNER JOIN\b/gi, "\nINNER JOIN")
+    .replace(/\bOUTER JOIN\b/gi, "\nOUTER JOIN")
+    .replace(/\bAND\b/gi, "\n  AND")
+    .replace(/\bOR\b/gi, "\n  OR")
+    .replace(/,/g, ",\n  ")
+    .trim();
+
+  output.innerText = formatted;
+}
+</script>
+
+</body>
+</html>
