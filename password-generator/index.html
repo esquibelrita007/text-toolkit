@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Password Generator - Free Secure Password Tool</title>
+<meta name="description" content="Generate strong, secure passwords instantly. Free online password generator with custom length and options."/>
+
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, Arial;
+    background: #0b1220;
+    color: white;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+
+  p {
+    color: #9ca3af;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .box {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+
+  .row {
+    margin: 10px 0;
+  }
+
+  label {
+    color: #cbd5e1;
+  }
+
+  .output {
+    margin-top: 15px;
+    padding: 12px;
+    background: #0b1220;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    font-family: monospace;
+    word-break: break-all;
+  }
+
+  button {
+    margin-top: 10px;
+    background: #1f2937;
+    color: white;
+    border: 1px solid #374151;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #374151;
+  }
+
+  .small {
+    font-size: 14px;
+    color: #9ca3af;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Password Generator</h1>
+  <p>Create strong, secure passwords instantly</p>
+</header>
+
+<div class="container">
+
+  <div class="box">
+
+    <div class="row">
+      <label>Password Length: <span id="lenVal">12</span></label>
+      <input id="length" type="range" min="6" max="32" value="12"/>
+    </div>
+
+    <div class="row">
+      <label><input type="checkbox" id="upper" checked /> Uppercase</label>
+    </div>
+
+    <div class="row">
+      <label><input type="checkbox" id="lower" checked /> Lowercase</label>
+    </div>
+
+    <div class="row">
+      <label><input type="checkbox" id="nums" checked /> Numbers</label>
+    </div>
+
+    <div class="row">
+      <label><input type="checkbox" id="symbols" /> Symbols</label>
+    </div>
+
+    <button onclick="generate()">Generate Password</button>
+
+    <div class="output" id="output">Your password will appear here</div>
+
+    <button onclick="copy()">Copy Password</button>
+
+    <div class="small" id="msg"></div>
+
+  </div>
+
+</div>
+
+<script>
+const length = document.getElementById("length");
+const lenVal = document.getElementById("lenVal");
+const output = document.getElementById("output");
+const msg = document.getElementById("msg");
+
+length.oninput = () => {
+  lenVal.textContent = length.value;
+};
+
+function generate() {
+  const upper = document.getElementById("upper").checked;
+  const lower = document.getElementById("lower").checked;
+  const nums = document.getElementById("nums").checked;
+  const symbols = document.getElementById("symbols").checked;
+
+  const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowerChars = "abcdefghijklmnopqrstuvwxyz";
+  const numChars = "0123456789";
+  const symChars = "!@#$%^&*()_+[]{}<>?";
+
+  let chars = "";
+
+  if (upper) chars += upperChars;
+  if (lower) chars += lowerChars;
+  if (nums) chars += numChars;
+  if (symbols) chars += symChars;
+
+  if (!chars) {
+    output.textContent = "Select at least one option";
+    return;
+  }
+
+  let password = "";
+  for (let i = 0; i < length.value; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  output.textContent = password;
+  msg.textContent = "Generated successfully ✔";
+}
+
+function copy() {
+  navigator.clipboard.writeText(output.textContent);
+  msg.textContent = "Copied to clipboard ✔";
+}
+</script>
+
+</body>
+</html>
