@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Word Counter Tool - Free Online Word, Character & Sentence Counter</title>
+
+  <meta name="description" content="Free online word counter tool to instantly count words, characters, sentences, and paragraphs. Fast, accurate text analysis for writers, bloggers, students, and SEO." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/word-counter/" />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+<header>
+  <h1>Word Counter Tool</h1>
+  <p>Free online tool to count words, characters, sentences, and paragraphs instantly</p>
+</header>
+
+<div class="container">
+
+  <textarea id="text" placeholder="Paste or type your text here..."></textarea>
+
+  <div class="stats">
+    <div class="card">
+      <div class="number" id="words">0</div>
+      <div class="label">Words</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="chars">0</div>
+      <div class="label">Characters</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="sentences">0</div>
+      <div class="label">Sentences</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="paragraphs">0</div>
+      <div class="label">Paragraphs</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    This free online word counter tool helps you instantly count words, characters, sentences, and paragraphs in real time.
+    It is designed for writers, students, bloggers, developers, and SEO professionals who need fast and accurate text analysis.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Word counter<br>
+    ✔ Character counter<br>
+    ✔ Sentence counter<br>
+    ✔ Paragraph counter<br>
+    ✔ Real-time updates<br>
+    ✔ 100% free online tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/character-counter/">Character Counter</a> ·
+    <a href="/case-converter/">Case Converter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Word Counter Tool
+</footer>
+
+<script>
+  const textArea = document.getElementById("text");
+
+  textArea.addEventListener("input", () => {
+    const text = textArea.value;
+
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    const chars = text.length;
+    const sentences = text.trim() ? text.split(/[.!?]+/).filter(Boolean).length : 0;
+    const paragraphs = text.trim() ? text.split(/\n+/).filter(Boolean).length : 0;
+
+    document.getElementById("words").innerText = words;
+    document.getElementById("chars").innerText = chars;
+    document.getElementById("sentences").innerText = sentences;
+    document.getElementById("paragraphs").innerText = paragraphs;
+  });
+</script>
+
+</body>
+</html>
