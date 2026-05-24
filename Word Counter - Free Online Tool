@@ -4,127 +4,25 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Word Counter Tool - Count Words, Characters, Sentences & Paragraphs Online Free</title>
+<title>Word Counter Tool - Free Online Word, Character & Sentence Counter</title>
 
-<meta name="description" content="Free online word counter tool to instantly count words, characters, sentences, and paragraphs. Fast, accurate text analysis for writers, students, bloggers, and SEO." />
+<meta name="description" content="Free online word counter tool to instantly count words, characters, sentences, and paragraphs. Fast SEO-friendly text analysis for writers, students, bloggers, and developers." />
 
 <meta name="google-site-verification" content="_zc7UUq40MGj8KJuklER3OsWS5WtbeP4BlDl3x0P1i8" />
 
+<!-- GLOBAL STYLES (your future system-ready version) -->
+<link rel="stylesheet" href="/styles.css">
 
-<style>
-  body {
-    margin: 0;
-    font-family: system-ui, Arial;
-    background: #000000;
-    color: #ffffff;
-  }
+<!-- SEO CANONICAL -->
+<link rel="canonical" href="https://text-toolkit-epc.pages.dev/word-counter/" />
 
-  header {
-    text-align: center;
-    padding: 50px 20px 25px;
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 42px;
-    color: #ffffff;
-  }
-
-  p {
-    color: #cccccc;
-    margin-top: 10px;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-  }
-
-  textarea {
-    width: 100%;
-    height: 220px;
-    padding: 16px;
-    border-radius: 12px;
-    border: 1px solid #222222;
-    background: #0a0a0a;
-    color: white;
-    font-size: 16px;
-    outline: none;
-    resize: vertical;
-  }
-
-  textarea:focus {
-    border-color: #ff0000;
-  }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  .card {
-    background: #0a0a0a;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #222222;
-    transition: 0.2s ease;
-  }
-
-  .card:hover {
-    border-color: #ff0000;
-    transform: translateY(-2px);
-  }
-
-  .number {
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .label {
-    color: #aaaaaa;
-    margin-top: 5px;
-  }
-
-  .seo-section {
-    margin-top: 50px;
-    line-height: 1.7;
-    color: #cccccc;
-  }
-
-  .seo-section h2 {
-    color: #ffffff;
-    margin-top: 30px;
-    font-size: 22px;
-  }
-
-  .seo-section a {
-    color: #ff0000;
-    text-decoration: none;
-  }
-
-  .seo-section a:hover {
-    text-decoration: underline;
-  }
-
-  footer {
-    margin-top: 50px;
-    padding: 20px;
-    text-align: center;
-    color: #777777;
-    border-top: 1px solid #222222;
-  }
-</style>
 </head>
 
 <body>
 
 <header>
   <h1>Word Counter Tool</h1>
-  <p>Free online tool to count words, characters, sentences, and paragraphs instantly</p>
+  <p>Instantly count words, characters, sentences, and paragraphs online</p>
 </header>
 
 <div class="container">
@@ -151,31 +49,32 @@
   <!-- SEO CONTENT -->
   <div class="seo-section">
 
-    <h2>About This Word Counter Tool</h2>
+    <h2>About This Tool</h2>
     <p>
-      This free word counter tool helps you instantly count words, characters, sentences, and paragraphs in real time.
-      It is designed for writers, students, bloggers, developers, and SEO professionals who need fast and accurate text analysis.
+      The Word Counter Tool helps you instantly count words, characters, sentences, and paragraphs in real time.
+      It is designed for writers, students, bloggers, and SEO professionals who need fast and accurate text analysis.
     </p>
 
-    <h2>Why Use This Tool?</h2>
+    <h2>Why Use It?</h2>
     <p>
-      Counting words manually is slow and inaccurate. This tool updates results instantly as you type, directly in your browser with no login or installation required.
+      This tool eliminates manual counting by providing instant live results directly in your browser.
+      No login, no installation, and no delays.
     </p>
 
     <h2>Features</h2>
     <p>
       ✔ Real-time word counting<br>
-      ✔ Character counting (with and without spaces)<br>
+      ✔ Character counting<br>
       ✔ Sentence detection<br>
-      ✔ Lightweight and fast performance<br>
-      ✔ Works on all devices
+      ✔ SEO writing optimization support<br>
+      ✔ Lightweight and fast performance
     </p>
 
     <h2>Related Tools</h2>
     <p>
-      <a href="/character-counter/">Character Counter Tool</a> ·
-      <a href="/case-converter/">Case Converter Tool</a> ·
-      <a href="/json-formatter/">JSON Formatter Tool</a>
+      <a href="/character-counter/">Character Counter</a> ·
+      <a href="/case-converter/">Case Converter</a> ·
+      <a href="/json-formatter/">JSON Formatter</a>
     </p>
 
   </div>
