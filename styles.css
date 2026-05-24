@@ -1,8 +1,18 @@
+:root {
+  --bg: #000000;
+  --card: #0a0a0a;
+  --border: #222222;
+  --text: #ffffff;
+  --muted: #cccccc;
+  --accent: #ff0000;
+}
+
+/* BASE */
 body {
   margin: 0;
-  font-family: system-ui, Arial;
-  background: #000000;
-  color: #ffffff;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* HEADER */
@@ -16,9 +26,9 @@ h1 {
   font-size: 42px;
 }
 
-/* TEXT */
-p {
-  color: #cccccc;
+/* ONLY HEADER TEXT (NOT ALL P TAGS) */
+header p {
+  color: var(--muted);
 }
 
 /* CONTAINER */
@@ -34,16 +44,16 @@ textarea {
   height: 220px;
   padding: 16px;
   border-radius: 12px;
-  border: 1px solid #222222;
-  background: #0a0a0a;
-  color: white;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
   font-size: 16px;
   outline: none;
   resize: vertical;
 }
 
 textarea:focus {
-  border-color: #ff0000;
+  border-color: var(--accent);
 }
 
 /* STATS */
@@ -55,16 +65,16 @@ textarea:focus {
 }
 
 .card {
-  background: #0a0a0a;
+  background: var(--card);
   padding: 20px;
   border-radius: 12px;
   text-align: center;
-  border: 1px solid #222222;
+  border: 1px solid var(--border);
   transition: 0.2s ease;
 }
 
 .card:hover {
-  border-color: #ff0000;
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -74,7 +84,7 @@ textarea:focus {
 }
 
 .label {
-  color: #aaaaaa;
+  color: var(--muted);
   margin-top: 5px;
 }
 
@@ -82,17 +92,17 @@ textarea:focus {
 .seo-section {
   margin-top: 50px;
   line-height: 1.7;
-  color: #cccccc;
+  color: var(--muted);
 }
 
 .seo-section h2 {
-  color: #ffffff;
+  color: var(--text);
   margin-top: 30px;
   font-size: 22px;
 }
 
 .seo-section a {
-  color: #ff0000;
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -106,5 +116,5 @@ footer {
   padding: 20px;
   text-align: center;
   color: #777777;
-  border-top: 1px solid #222222;
+  border-top: 1px solid var(--border);
 }
