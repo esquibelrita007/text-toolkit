@@ -6,24 +6,18 @@
 
   <title>Character Counter Tool</title>
 
-  <meta name="description" content="Free online character counter tool to instantly count characters, words, sentences, and paragraphs." />
+  <meta name="description" content="Instantly count characters, words, and sentences in real time. Simple online text counter." />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://text-toolkit-epc.pages.dev/character-counter/" />
   <link rel="stylesheet" href="/styles.css" />
-
-  <!-- safety override to prevent blue links -->
-  <style>
-    a { color: var(--text); text-decoration: none; }
-    a:hover { color: var(--accent); }
-  </style>
 </head>
 
 <body>
 
 <header>
   <h1>Character Counter Tool</h1>
-  <p>Free online tool to count characters, words, sentences, and paragraphs</p>
+  <p>Instantly count characters, words, and sentences in real time. Simple online text counter.</p>
 </header>
 
 <div class="container">
@@ -51,28 +45,11 @@
 
 </div>
 
-<!-- SEO SECTION -->
 <div class="container seo-section">
 
   <h2>About This Tool</h2>
   <p>
-    This free character counter tool instantly counts characters, words, sentences, and paragraphs in real time.
-  </p>
-
-  <h2>Features</h2>
-  <p>
-    ✔ Character counter<br>
-    ✔ Character counter without spaces<br>
-    ✔ Word counter<br>
-    ✔ Instant updates<br>
-    ✔ 100% free online tool
-  </p>
-
-  <h2>More Tools</h2>
-  <p>
-    <a href="/">Home</a> ·
-    <a href="/word-counter/">Word Counter</a> ·
-    <a href="/case-converter/">Case Converter</a>
+    Instantly count characters, words, and sentences in real time using this simple online text counter.
   </p>
 
 </div>
@@ -87,13 +64,9 @@
   textArea.addEventListener("input", () => {
     const text = textArea.value;
 
-    const chars = text.length;
-    const charsNoSpaces = text.replace(/\s/g, "").length;
-    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-
-    document.getElementById("chars").innerText = chars;
-    document.getElementById("charsNoSpaces").innerText = charsNoSpaces;
-    document.getElementById("words").innerText = words;
+    document.getElementById("chars").innerText = text.length;
+    document.getElementById("charsNoSpaces").innerText = text.replace(/\s/g, "").length;
+    document.getElementById("words").innerText = text.trim() ? text.trim().split(/\s+/).length : 0;
   });
 </script>
 
