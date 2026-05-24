@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JWT Decoder Tool</title>
+
+  <meta name="description" content="Decode JWT tokens instantly and view header, payload, and signature data clearly." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/jwt-decoder/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      min-height: 120px;
+      font-family: monospace;
+    }
+
+    .section-title {
+      color: #ff0000;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .error {
+      color: #ff5555;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>JWT Decoder Tool</h1>
+  <p>Decode JWT tokens instantly and view header, payload, and signature data clearly.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste JWT token here..."></textarea>
+
+  <button class="btn" onclick="decodeJWT()">Decode JWT</button>
+
+  <div class="output" id="output">Decoded JWT data will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Decode JWT tokens instantly and view header, payload, and signature data clearly using this free online JWT decoder tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Decode JWT header<br>
+    ✔ Decode JWT payload<br>
+    ✔ View signature section<br>
+    ✔ Developer-friendly token inspection<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/base64-encoder-decoder/">Base64 Encoder Decoder</a> ·
+    <a href="/json-formatter/">JSON Formatter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — JWT Decoder Tool
+</footer>
+
+<script>
+function base64UrlDecode(str) {
+  str = str.replace(/-/g, "+").replace(/_/g, "/");
+
+  while (str.length % 4) {
+    str += "=";
+  }
+
+  return decodeURIComponent(
+    atob(str)
+      .split("")
+      .map(function(c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+}
+
+function decodeJWT() {
+  const token = document.getElementById("input").value.trim();
+  const output = document.getElementById("output");
+
+  if (!token) {
+    output.innerText = "Please enter a JWT token.";
+    return;
+  }
+
+  const parts = token.split(".");
+
+  if (parts.length !== 3) {
+    output.innerHTML = '<span class="error">Invalid JWT format. A JWT should have 3 parts separated by dots.</span>';
+    return;
+  }
+
+  try {
+    const header = JSON.parse(base64UrlDecode(parts[0]));
+    const payload = JSON.parse(base64UrlDecode(parts[1]));
+    const signature = parts[2];
+
+    output.innerText =
+      "HEADER:\n" +
+      JSON.stringify(header, null, 2) +
+      "\n\nPAYLOAD:\n" +
+      JSON.stringify(payload, null, 2) +
+      "\n\nSIGNATURE:\n" +
+      signature;
+
+  } catch (error) {
+    output.innerHTML = '<span class="error">Unable to decode JWT token.</span>';
+  }
+}
+</script>
+
+</body>
+</html>
