@@ -26,7 +26,7 @@ h1 {
   font-size: 42px;
 }
 
-/* ONLY HEADER TEXT (NOT ALL P TAGS) */
+/* ONLY HEADER TEXT */
 header p {
   color: var(--muted);
 }
