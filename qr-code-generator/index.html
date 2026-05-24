@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>QR Code Generator Tool</title>
+
+  <meta name="description" content="Generate custom QR codes instantly for URLs, text, contact info, and more." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/qr-code-generator/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 20px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      text-align: center;
+      min-height: 120px;
+    }
+
+    #qrcode img {
+      margin-top: 10px;
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>QR Code Generator Tool</h1>
+  <p>Generate custom QR codes instantly for URLs, text, contact info, and more.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Enter URL or text here..."></textarea>
+
+  <button class="btn" onclick="generateQR()">Generate QR Code</button>
+
+  <div class="output">
+    <div id="qrcode">Your QR code will appear here...</div>
+  </div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Generate custom QR codes instantly for URLs, text, contact information, and more using this free online QR code generator tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Instant QR code generation<br>
+    ✔ Supports URLs and text<br>
+    ✔ Mobile-friendly output<br>
+    ✔ Fast and lightweight<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/slug-generator/">Slug Generator</a> ·
+    <a href="/grammar-checker/">Grammar Checker</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — QR Code Generator Tool
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+function generateQR() {
+  const input = document.getElementById("input").value.trim();
+  const qrContainer = document.getElementById("qrcode");
+
+  qrContainer.innerHTML = "";
+
+  if (!input) {
+    qrContainer.innerText = "Please enter text or a URL.";
+    return;
+  }
+
+  new QRCode(qrContainer, {
+    text: input,
+    width: 220,
+    height: 220
+  });
+}
+</script>
+
+</body>
+</html>
