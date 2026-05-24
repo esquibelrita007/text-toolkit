@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Plagiarism Checker Tool</title>
+
+  <meta name="description" content="Check text for duplicate content, repeated phrases, and potential plagiarism instantly." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/plagiarism-checker/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      min-height: 120px;
+    }
+
+    .warning {
+      color: #ff5555;
+      margin-top: 10px;
+    }
+
+    .good {
+      color: #66ff99;
+      margin-top: 10px;
+    }
+
+    .duplicate {
+      border-bottom: 1px solid #222;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Plagiarism Checker Tool</h1>
+  <p>Check text for duplicate content, repeated phrases, and potential plagiarism instantly.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste text here..."></textarea>
+
+  <button class="btn" onclick="checkPlagiarism()">Check Plagiarism</button>
+
+  <div class="output" id="output">Results will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Check text for duplicate content, repeated phrases, and potential plagiarism instantly using this free online plagiarism checker tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Detect repeated phrases<br>
+    ✔ Find duplicate sentences<br>
+    ✔ Identify repeated wording<br>
+    ✔ Instant text analysis<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/grammar-checker/">Grammar Checker</a> ·
+    <a href="/word-counter/">Word Counter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Plagiarism Checker Tool
+</footer>
+
+<script>
+function checkPlagiarism() {
+  const text = document.getElementById("input").value.trim();
+  const output = document.getElementById("output");
+
+  if (!text) {
+    output.innerHTML = "Please enter text to analyze.";
+    return;
+  }
+
+  const sentences = text
+    .split(/[.!?]+/)
+    .map(sentence => sentence.trim())
+    .filter(sentence => sentence.length > 5);
+
+  const seen = {};
+  const duplicates = [];
+
+  sentences.forEach(sentence => {
+    const normalized = sentence.toLowerCase();
+
+    if (seen[normalized]) {
+      seen[normalized]++;
+    } else {
+      seen[normalized] = 1;
+    }
+  });
+
+  Object.keys(seen).forEach(sentence => {
+    if (seen[sentence] > 1) {
+      duplicates.push({
+        sentence: sentence,
+        count: seen[sentence]
+      });
+    }
+  });
+
+  if (duplicates.length === 0) {
+    output.innerHTML = '<div class="good">No major duplicate content detected.</div>';
+    return;
+  }
+
+  let html = '<div class="warning">Potential duplicate content detected:</div><br>';
+
+  duplicates.forEach(item => {
+    html += `
+      <div class="duplicate">
+        <strong>Repeated ${item.count} times:</strong><br>
+        "${item.sentence}"
+      </div>
+    `;
+  });
+
+  output.innerHTML = html;
+}
+</script>
+
+</body>
+</html>
