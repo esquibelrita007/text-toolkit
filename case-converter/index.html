@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Case Converter Tool</title>
+
+  <meta name="description" content="Convert text to uppercase, lowercase, title case, or sentence case instantly and easily." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/case-converter/" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+<header>
+  <h1>Case Converter Tool</h1>
+  <p>Convert text to uppercase, lowercase, title case, or sentence case instantly and easily.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="text" placeholder="Paste or type your text here..."></textarea>
+
+  <div class="stats">
+
+    <div class="card">
+      <div class="number" id="upper">0</div>
+      <div class="label">UPPERCASE</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="lower">0</div>
+      <div class="label">lowercase</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="words">0</div>
+      <div class="label">Words</div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SEO SECTION -->
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Convert text to uppercase, lowercase, title case, or sentence case instantly and easily using this free online tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Uppercase converter<br>
+    ✔ Lowercase converter<br>
+    ✔ Word counter<br>
+    ✔ Instant real-time updates<br>
+    ✔ 100% free online tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/word-counter/">Word Counter</a> ·
+    <a href="/character-counter/">Character Counter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Case Converter Tool
+</footer>
+
+<script>
+  const textArea = document.getElementById("text");
+
+  textArea.addEventListener("input", () => {
+    const text = textArea.value;
+
+    const upper = text.toUpperCase();
+    const lower = text.toLowerCase();
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+
+    document.getElementById("upper").innerText = upper.length;
+    document.getElementById("lower").innerText = lower.length;
+    document.getElementById("words").innerText = words;
+  });
+</script>
+
+</body>
+</html>
