@@ -13,6 +13,7 @@ body {
   font-family: system-ui, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.5;
 }
 
 /* HEADER */
@@ -26,9 +27,11 @@ h1 {
   font-size: 42px;
 }
 
-/* ONLY HEADER TEXT */
+/* HEADER TEXT */
 header p {
   color: var(--muted);
+  max-width: 700px;
+  margin: 12px auto 0;
 }
 
 /* CONTAINER */
@@ -38,7 +41,7 @@ header p {
   padding: 20px;
 }
 
-/* INPUT */
+/* INPUTS */
 textarea {
   width: 100%;
   height: 220px;
@@ -50,13 +53,14 @@ textarea {
   font-size: 16px;
   outline: none;
   resize: vertical;
+  box-sizing: border-box;
 }
 
 textarea:focus {
   border-color: var(--accent);
 }
 
-/* STATS */
+/* GRID STATS */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -64,13 +68,15 @@ textarea:focus {
   margin-top: 20px;
 }
 
+/* CARDS */
 .card {
+  display: block;
   background: var(--card);
   padding: 20px;
   border-radius: 12px;
-  text-align: center;
   border: 1px solid var(--border);
   transition: 0.2s ease;
+  text-align: left;
 }
 
 .card:hover {
@@ -78,11 +84,27 @@ textarea:focus {
   transform: translateY(-2px);
 }
 
+/* CARD TITLES */
+.card h3 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 22px;
+}
+
+/* CARD TEXT */
+.card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* TOOL NUMBERS */
 .number {
   font-size: 28px;
   font-weight: bold;
 }
 
+/* LABELS */
 .label {
   color: var(--muted);
   margin-top: 5px;
@@ -101,9 +123,19 @@ textarea:focus {
   font-size: 22px;
 }
 
+/* LINKS */
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* SEO LINKS */
 .seo-section a {
   color: var(--accent);
-  text-decoration: none;
 }
 
 .seo-section a:hover {
@@ -117,13 +149,4 @@ footer {
   text-align: center;
   color: #777777;
   border-top: 1px solid var(--border);
-}
-
-a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--accent);
 }
