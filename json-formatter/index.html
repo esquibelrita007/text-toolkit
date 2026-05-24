@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JSON Formatter Tool</title>
+
+  <meta name="description" content="Format, validate, and beautify JSON instantly. Developer-friendly JSON tool online." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/json-formatter/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    /* small tool-specific layout tweaks only */
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    pre {
+      background: #0a0a0a;
+      border: 1px solid #222;
+      padding: 15px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 15px;
+      color: #ffffff;
+    }
+
+    .error {
+      color: #ff4444;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>JSON Formatter Tool</h1>
+  <p>Format, validate, and beautify JSON instantly. Developer-friendly JSON tool online.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="jsonInput" placeholder='Paste JSON here...'></textarea>
+
+  <button class="btn" onclick="formatJSON()">Format JSON</button>
+
+  <div id="error" class="error"></div>
+
+  <pre id="output">{}</pre>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Format, validate, and beautify JSON instantly using this free developer-friendly JSON tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ JSON formatter<br>
+    ✔ JSON validator<br>
+    ✔ Pretty print output<br>
+    ✔ Instant error detection<br>
+    ✔ 100% free online tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/word-counter/">Word Counter</a> ·
+    <a href="/case-converter/">Case Converter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — JSON Formatter Tool
+</footer>
+
+<script>
+function formatJSON() {
+  const input = document.getElementById("jsonInput").value;
+  const output = document.getElementById("output");
+  const error = document.getElementById("error");
+
+  try {
+    const parsed = JSON.parse(input);
+    output.textContent = JSON.stringify(parsed, null, 2);
+    error.textContent = "";
+  } catch (e) {
+    output.textContent = "";
+    error.textContent = "Invalid JSON format";
+  }
+}
+</script>
+
+</body>
+</html>
