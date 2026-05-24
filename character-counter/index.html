@@ -4,19 +4,22 @@ const textArea = document.getElementById("text");
 textArea.addEventListener("input", () => {
   const text = textArea.value;
 
+  // Characters (raw input)
   const chars = text.length;
 
-  const words = text
-    .trim()
-    .split(/\s+/)
-    .filter(word => word.length > 0).length;
+  // Words (safe handling for empty + multiple spaces/newlines)
+  const words = text.trim().length
+    ? text.trim().split(/\s+/).filter(Boolean).length
+    : 0;
 
-  const sentences = text
-    .split(/[.!?]+/)
-    .filter(s => s.trim().length > 0).length;
+  // Sentences (safe + avoids false counts)
+  const sentences = text.trim().length
+    ? text.split(/[.!?]+/).filter(s => s.trim().length > 0).length
+    : 0;
 
+  // Update UI
   document.getElementById("chars").innerText = chars;
-  document.getElementById("words").innerText = text.trim() ? words : 0;
-  document.getElementById("sentences").innerText = text.trim() ? sentences : 0;
+  document.getElementById("words").innerText = words;
+  document.getElementById("sentences").innerText = sentences;
 });
 </script>
