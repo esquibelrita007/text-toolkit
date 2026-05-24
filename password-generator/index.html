@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Password Generator Tool</title>
+
+  <meta name="description" content="Generate strong, secure passwords instantly for maximum online security." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/password-generator/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      word-break: break-all;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Password Generator Tool</h1>
+  <p>Generate strong, secure passwords instantly for maximum online security.</p>
+</header>
+
+<div class="container">
+
+  <div class="stats">
+
+    <div class="card">
+      <div class="number" id="lengthVal">16</div>
+      <div class="label">Length</div>
+    </div>
+
+    <div class="card">
+      <div class="number" id="count">0</div>
+      <div class="label">Generated</div>
+    </div>
+
+  </div>
+
+  <button class="btn" onclick="generatePassword()">Generate Password</button>
+
+  <div class="output" id="output">Click generate to create a password</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Generate strong, secure passwords instantly for maximum online security using this free online tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Strong password generator<br>
+    ✔ Random secure output<br>
+    ✔ Fast generation<br>
+    ✔ No data stored<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/word-counter/">Word Counter</a> ·
+    <a href="/json-formatter/">JSON Formatter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Password Generator Tool
+</footer>
+
+<script>
+let count = 0;
+
+function generatePassword() {
+  const length = 16;
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}<>?";
+  let password = "";
+
+  for (let i = 0; i < length; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  document.getElementById("output").innerText = password;
+
+  count++;
+  document.getElementById("count").innerText = count;
+}
+</script>
+
+</body>
+</html>
