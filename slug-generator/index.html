@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>URL Slug Generator Tool</title>
+
+  <meta name="description" content="Create clean, SEO-friendly URL slugs instantly for websites, blogs, and SEO optimization." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/slug-generator/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      word-break: break-all;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>URL Slug Generator Tool</h1>
+  <p>Create clean, SEO-friendly URL slugs instantly for websites, blogs, and SEO optimization.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Enter title or text here..."></textarea>
+
+  <button class="btn" onclick="generateSlug()">Generate Slug</button>
+
+  <div class="output" id="output">your-generated-slug-will-appear-here</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Create clean, SEO-friendly URL slugs instantly for websites, blogs, and SEO optimization using this free online tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ SEO-friendly slug generator<br>
+    ✔ Removes special characters<br>
+    ✔ Converts spaces to hyphens<br>
+    ✔ Lowercase formatting<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/word-counter/">Word Counter</a> ·
+    <a href="/password-generator/">Password Generator</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — URL Slug Generator Tool
+</footer>
+
+<script>
+function generateSlug() {
+  let text = document.getElementById("input").value;
+
+  let slug = text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+
+  document.getElementById("output").innerText = slug;
+}
+</script>
+
+</body>
+</html>
