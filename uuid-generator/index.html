@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>UUID Generator Tool</title>
+
+  <meta name="description" content="Generate random UUIDs instantly for development, databases, testing, and unique identifiers." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/uuid-generator/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      min-height: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>UUID Generator Tool</h1>
+  <p>Generate random UUIDs instantly for development, databases, testing, and unique identifiers.</p>
+</header>
+
+<div class="container">
+
+  <button class="btn" onclick="generateUUID()">Generate UUID</button>
+
+  <div class="output" id="output">Your UUID will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Generate random UUIDs instantly for development, databases, testing, and unique identifiers using this free online UUID generator tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Generate random UUIDs<br>
+    ✔ Useful for developers and databases<br>
+    ✔ Works instantly in your browser<br>
+    ✔ No signup required<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/json-formatter/">JSON Formatter</a> ·
+    <a href="/base64-encoder-decoder/">Base64 Encoder Decoder</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — UUID Generator Tool
+</footer>
+
+<script>
+function generateUUID() {
+  let uuid;
+
+  if (crypto && crypto.randomUUID) {
+    uuid = crypto.randomUUID();
+  } else {
+    uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+      const r = Math.random() * 16 | 0;
+      const v = c === "x" ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  document.getElementById("output").innerText = uuid;
+}
+</script>
+
+</body>
+</html>
