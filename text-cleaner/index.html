@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Text Cleaner Tool - Remove Extra Spaces & Clean Text Instantly</title>
+
+<meta name="description" content="Free online text cleaner tool to remove extra spaces, line breaks, and messy formatting instantly. Clean and format text for writing, coding, and SEO." />
+
+<meta name="google-site-verification" content="_zc7UUq40MGj8KJuklER3OsWS5WtbeP4BlDl3x0P1i8" />
+
+<link rel="canonical" href="https://text-toolkit-epc.pages.dev/text-cleaner/" />
+
+<!-- GLOBAL STYLE (IMPORTANT FOR FIXING BLUE ISSUE) -->
+<link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body>
+
+<header>
+  <h1>Text Cleaner Tool</h1>
+  <p>Clean messy text instantly by removing extra spaces and formatting issues</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste your messy text here..."></textarea>
+
+  <div class="stats">
+    <div class="card">
+      <div class="number" id="output">-</div>
+      <div class="label">Cleaned Text</div>
+    </div>
+  </div>
+
+  <div class="seo-section">
+    <h2>About This Tool</h2>
+    <p>
+      The Text Cleaner Tool removes extra spaces, line breaks, and unwanted formatting instantly.
+      It is useful for writers, developers, and SEO professionals who need clean, readable text.
+    </p>
+
+    <h2>Features</h2>
+    <p>
+      ✔ Remove extra spaces<br>
+      ✔ Remove line breaks<br>
+      ✔ Clean pasted text instantly<br>
+      ✔ Fast browser-based processing
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Text Cleaner Tool
+</footer>
+
+<script>
+const input = document.getElementById("input");
+const output = document.getElementById("output");
+
+function cleanText(text) {
+  return text
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+input.addEventListener("input", () => {
+  output.innerText = cleanText(input.value) || "-";
+});
+</script>
+
+</body>
+</html>
