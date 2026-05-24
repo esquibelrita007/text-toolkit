@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>URL Encoder Decoder Tool</title>
+
+  <meta name="description" content="Encode URLs for safe web usage or decode encoded URLs back to readable text instantly." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/url-encoder-decoder/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      margin-right: 8px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      min-height: 120px;
+    }
+
+    .error {
+      color: #ff5555;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>URL Encoder Decoder Tool</h1>
+  <p>Encode URLs for safe web usage or decode encoded URLs back to readable text instantly.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste URL or encoded text here..."></textarea>
+
+  <button class="btn" onclick="encodeURL()">Encode URL</button>
+  <button class="btn" onclick="decodeURL()">Decode URL</button>
+
+  <div class="output" id="output">Results will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Encode URLs for safe web usage or decode encoded URLs back to readable text instantly using this free online URL encoder decoder tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ URL encoder<br>
+    ✔ URL decoder<br>
+    ✔ Safe web URL formatting<br>
+    ✔ Instant conversion<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/base64-encoder-decoder/">Base64 Encoder Decoder</a> ·
+    <a href="/json-formatter/">JSON Formatter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — URL Encoder Decoder Tool
+</footer>
+
+<script>
+function encodeURL() {
+  const input = document.getElementById("input").value;
+  const output = document.getElementById("output");
+
+  if (!input.trim()) {
+    output.innerText = "Please enter text or a URL to encode.";
+    return;
+  }
+
+  try {
+    output.innerText = encodeURIComponent(input);
+  } catch (error) {
+    output.innerHTML = '<span class="error">Unable to encode URL.</span>';
+  }
+}
+
+function decodeURL() {
+  const input = document.getElementById("input").value.trim();
+  const output = document.getElementById("output");
+
+  if (!input) {
+    output.innerText = "Please enter encoded text to decode.";
+    return;
+  }
+
+  try {
+    output.innerText = decodeURIComponent(input);
+  } catch (error) {
+    output.innerHTML = '<span class="error">Invalid encoded URL.</span>';
+  }
+}
+</script>
+
+</body>
+</html>
