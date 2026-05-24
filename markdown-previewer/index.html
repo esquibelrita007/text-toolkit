@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Markdown Previewer Tool</title>
+
+  <meta name="description" content="Write Markdown and preview formatted content instantly with live rendering." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/markdown-previewer/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .editor {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    textarea {
+      min-height: 400px;
+    }
+
+    .preview {
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 20px;
+      overflow-x: auto;
+      min-height: 400px;
+    }
+
+    .preview h1,
+    .preview h2,
+    .preview h3 {
+      color: #ffffff;
+    }
+
+    .preview p,
+    .preview li {
+      color: #cccccc;
+      line-height: 1.7;
+    }
+
+    .preview code {
+      background: #111;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #ff5555;
+    }
+
+    .preview pre {
+      background: #111;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .preview a {
+      color: #ff0000;
+    }
+
+    @media (max-width: 800px) {
+      .editor {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Markdown Previewer Tool</h1>
+  <p>Write Markdown and preview formatted content instantly with live rendering.</p>
+</header>
+
+<div class="container">
+
+  <div class="editor">
+
+    <textarea id="input" placeholder="# Write Markdown here...
+
+## Example
+
+- Bullet point
+- Another item
+
+**Bold text**
+
+`Inline code`
+
+[Example Link](https://example.com)"></textarea>
+
+    <div class="preview" id="preview">
+      Live Markdown preview will appear here...
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Write Markdown and preview formatted content instantly with live rendering using this free online Markdown previewer tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Live Markdown preview<br>
+    ✔ Supports headings and lists<br>
+    ✔ Supports links and code blocks<br>
+    ✔ Real-time rendering<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/html-formatter/">HTML Formatter</a> ·
+    <a href="/json-formatter/">JSON Formatter</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — Markdown Previewer Tool
+</footer>
+
+<script>
+const input = document.getElementById("input");
+const preview = document.getElementById("preview");
+
+function renderMarkdown(text) {
+
+  let html = text;
+
+  html = html.replace(/^### (.*$)/gim, "<h3>$1</h3>");
+  html = html.replace(/^## (.*$)/gim, "<h2>$1</h2>");
+  html = html.replace(/^# (.*$)/gim, "<h1>$1</h1>");
+
+  html = html.replace(/\*\*(.*?)\*\*/gim, "<strong>$1</strong>");
+  html = html.replace(/\*(.*?)\*/gim, "<em>$1</em>");
+
+  html = html.replace(/`([^`]+)`/gim, "<code>$1</code>");
+
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank">$1</a>');
+
+  html = html.replace(/^\- (.*$)/gim, "<li>$1</li>");
+  html = html.replace(/(<li>.*<\/li>)/gims, "<ul>$1</ul>");
+
+  html = html.replace(/\n$/gim, "<br>");
+
+  return html;
+}
+
+input.addEventListener("input", () => {
+  preview.innerHTML = renderMarkdown(input.value);
+});
+
+preview.innerHTML = renderMarkdown(input.value);
+</script>
+
+</body>
+</html>
