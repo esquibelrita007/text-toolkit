@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JavaScript Minifier Tool</title>
+
+  <meta name="description" content="Minify JavaScript code instantly by removing comments, spaces, and unnecessary formatting." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/javascript-minifier/" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    .btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      border-color: #ff0000;
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      min-height: 120px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>JavaScript Minifier Tool</h1>
+  <p>Minify JavaScript code instantly by removing comments, spaces, and unnecessary formatting.</p>
+</header>
+
+<div class="container">
+
+  <textarea id="input" placeholder="Paste JavaScript code here..."></textarea>
+
+  <button class="btn" onclick="minifyJS()">Minify JavaScript</button>
+
+  <div class="output" id="output">Minified JavaScript will appear here...</div>
+
+</div>
+
+<div class="container seo-section">
+
+  <h2>About This Tool</h2>
+  <p>
+    Minify JavaScript code instantly by removing comments, spaces, and unnecessary formatting using this free online JavaScript minifier tool.
+  </p>
+
+  <h2>Features</h2>
+  <p>
+    ✔ Remove JavaScript comments<br>
+    ✔ Remove unnecessary whitespace<br>
+    ✔ Compress JavaScript code<br>
+    ✔ Improve file size<br>
+    ✔ 100% free tool
+  </p>
+
+  <h2>More Tools</h2>
+  <p>
+    <a href="/">Home</a> ·
+    <a href="/css-minifier/">CSS Minifier</a> ·
+    <a href="/html-minifier/">HTML Minifier</a>
+  </p>
+
+</div>
+
+<footer>
+  © 2026 Text Toolkit — JavaScript Minifier Tool
+</footer>
+
+<script>
+function minifyJS() {
+  const input = document.getElementById("input").value;
+  const output = document.getElementById("output");
+
+  if (!input.trim()) {
+    output.innerText = "Please enter JavaScript code to minify.";
+    return;
+  }
+
+  try {
+    const minified = input
+      .replace(/\/\/.*$/gm, "")
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      .replace(/\s+/g, " ")
+      .replace(/\s*([{}();,:=+\-*/<>])\s*/g, "$1")
+      .trim();
+
+    output.innerText = minified;
+  } catch (error) {
+    output.innerText = "Unable to minify JavaScript.";
+  }
+}
+</script>
+
+</body>
+</html>
