@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Text Toolkit - Free Online SEO & Text Utility Tools</title>
+  <title>Text Toolkit - Free Online Text, SEO & Developer Tools</title>
 
-  <meta name="description" content="Text Toolkit is a free online collection of fast, lightweight SEO tools for bloggers, writers, developers, students, and content creators including grammar checker, keyword density checker, JSON formatter, QR code generator, text cleaner, and more." />
+  <meta name="description" content="Free online tools for text editing, SEO optimization, writing, formatting, and developer utilities. Fast browser-based tools for creators, marketers, writers, and developers." />
 
   <meta name="google-site-verification" content="_zc7UUq40MGj8KJuklER3OsWS5WtbeP4BlDl3x0P1i8" />
-
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://text-toolkit-epc.pages.dev/" />
@@ -22,40 +21,109 @@
       color: #ffffff;
     }
 
-    a {
-      color: #ffffff;
-      text-decoration: none;
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 16px;
+      background: linear-gradient(90deg, #ff1a1a, #ff3c3c, #ff1a1a);
+      border-bottom: 1px solid #ff4d4d;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 0 18px rgba(255, 0, 0, 0.35);
     }
 
-    a:hover {
-      color: #ff0000;
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      opacity: 0.75;
     }
 
     header {
       text-align: center;
-      padding: 80px 20px 50px;
+      padding: 90px 20px 55px;
     }
 
     h1 {
-      font-size: 54px;
+      font-size: 58px;
       margin: 0;
       color: #ffffff;
     }
 
     .subtitle {
-      margin-top: 15px;
+      margin-top: 18px;
       color: #cccccc;
       font-size: 18px;
-      max-width: 750px;
+      max-width: 780px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .trust-section {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 20px 70px;
+      text-align: center;
+    }
+
+    .trust-section h2 {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .trust-section p {
+      color: #aaaaaa;
+      line-height: 1.8;
+      max-width: 760px;
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .trust-grid {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .trust-card {
+      background: #0a0a0a;
+      border: 1px solid #222222;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .trust-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #999999;
       line-height: 1.6;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin: 20px 0 40px;
     }
 
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 20px 20px 80px;
+      padding: 0 20px 90px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
@@ -73,8 +141,8 @@
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: #ff0000;
-      box-shadow: 0 0 18px rgba(255, 0, 0, 0.25);
+      border-color: #ff3c3c;
+      box-shadow: 0 0 18px rgba(255, 60, 60, 0.25);
     }
 
     .card h3 {
@@ -92,30 +160,74 @@
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 34px 20px;
       color: #777777;
       border-top: 1px solid #222222;
+      font-size: 14px;
     }
 
     footer a {
-      color: #cccccc;
+      color: #aaaaaa;
+      text-decoration: none;
+      margin: 0 10px;
     }
 
     footer a:hover {
-      color: #ff0000;
+      color: #ffffff;
     }
   </style>
 </head>
 
 <body>
 
+<nav>
+  <a href="/">Home</a>
+  <a href="#tools">All Tools</a>
+  <a href="/about/">About</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="/terms/">Terms</a>
+  <a href="/contact/">Contact</a>
+</nav>
+
 <header>
   <h1>Text Toolkit</h1>
-
   <p class="subtitle">
-    Text Toolkit is a free online collection of fast, lightweight SEO tools for bloggers, writers, developers, students, and content creators including grammar checker, keyword density checker, JSON formatter, QR code generator, text cleaner, and more.
+    Free browser-based tools for creators, writers, developers, marketers, and SEO professionals.
+    Clean, format, optimize, count, generate, and convert text instantly with simple online utilities.
   </p>
 </header>
+
+<section class="trust-section">
+  <h2>Why Use Text Toolkit?</h2>
+  <p>
+    Text Toolkit provides fast, free online utilities designed to simplify writing workflows,
+    SEO optimization, formatting, coding, and everyday text processing. No downloads required.
+  </p>
+
+  <div class="trust-grid">
+    <div class="trust-card">
+      <h3>Free To Use</h3>
+      <p>Simple online tools without complicated setup or subscriptions.</p>
+    </div>
+
+    <div class="trust-card">
+      <h3>Fast & Lightweight</h3>
+      <p>Browser-based utilities built for quick results on desktop and mobile.</p>
+    </div>
+
+    <div class="trust-card">
+      <h3>Creator Friendly</h3>
+      <p>Useful for bloggers, creators, developers, writers, marketers, and SEO work.</p>
+    </div>
+
+    <div class="trust-card">
+      <h3>Productivity Focused</h3>
+      <p>Tools designed to make everyday content, code, and formatting tasks easier.</p>
+    </div>
+  </div>
+</section>
+
+<h2 class="section-title" id="tools">Popular Free Tools</h2>
 
 <div class="container">
 
@@ -154,69 +266,74 @@
     <p>Remove extra spaces, clean formatting, and fix messy text instantly.</p>
   </a>
 
+  <a class="card" href="/remove-line-breaks/">
+    <h3>Remove Line Breaks Tool</h3>
+    <p>Remove line breaks, extra spaces, and unwanted formatting from text instantly.</p>
+  </a>
+
   <a class="card" href="/grammar-checker/">
     <h3>Grammar Checker Tool</h3>
-    <p>Check grammar, spelling, punctuation, and sentence structure instantly online.</p>
+    <p>Check grammar, spelling, punctuation, and common writing mistakes instantly.</p>
   </a>
 
   <a class="card" href="/plagiarism-checker/">
     <h3>Plagiarism Checker Tool</h3>
-    <p>Check text for duplicate content and repeated phrases instantly online.</p>
+    <p>Check text for duplicate content, repeated phrases, and potential plagiarism instantly.</p>
   </a>
 
   <a class="card" href="/qr-code-generator/">
     <h3>QR Code Generator Tool</h3>
-    <p>Create custom QR codes instantly for links, text, websites, and more.</p>
+    <p>Generate custom QR codes instantly for URLs, text, contact info, and more.</p>
   </a>
 
   <a class="card" href="/meta-tag-generator/">
     <h3>Meta Tag Generator Tool</h3>
-    <p>Create SEO meta tags instantly for websites, blogs, and search optimization.</p>
+    <p>Generate SEO meta tags for websites including titles, descriptions, and keywords instantly.</p>
   </a>
 
   <a class="card" href="/keyword-density-checker/">
     <h3>Keyword Density Checker Tool</h3>
-    <p>Analyze keyword density and word frequency instantly for SEO optimization.</p>
+    <p>Analyze keyword frequency, word usage, and SEO keyword density instantly.</p>
   </a>
 
   <a class="card" href="/readability-checker/">
     <h3>Readability Checker Tool</h3>
-    <p>Analyze readability scores and improve writing clarity instantly online.</p>
+    <p>Analyze text readability, sentence complexity, and reading difficulty instantly.</p>
   </a>
 
   <a class="card" href="/base64-encoder-decoder/">
     <h3>Base64 Encoder Decoder Tool</h3>
-    <p>Encode and decode Base64 text instantly using this free online utility tool.</p>
+    <p>Encode text to Base64 or decode Base64 back to readable text instantly.</p>
   </a>
 
   <a class="card" href="/url-encoder-decoder/">
     <h3>URL Encoder Decoder Tool</h3>
-    <p>Encode and decode URLs instantly for safe web formatting and development.</p>
+    <p>Encode URLs for safe web usage or decode encoded URLs back to readable text instantly.</p>
   </a>
 
   <a class="card" href="/uuid-generator/">
     <h3>UUID Generator Tool</h3>
-    <p>Generate random UUIDs instantly for development, databases, and applications.</p>
+    <p>Generate random UUIDs instantly for development, databases, testing, and unique identifiers.</p>
   </a>
 
   <a class="card" href="/html-formatter/">
     <h3>HTML Formatter Tool</h3>
-    <p>Format and beautify HTML code instantly for cleaner, readable markup.</p>
+    <p>Format, beautify, and clean messy HTML code instantly for better readability.</p>
   </a>
 
   <a class="card" href="/html-minifier/">
     <h3>HTML Minifier Tool</h3>
-    <p>Minify HTML code instantly by removing unnecessary spaces and formatting.</p>
+    <p>Minify HTML code instantly by removing extra spaces, line breaks, and comments.</p>
   </a>
 
   <a class="card" href="/css-minifier/">
     <h3>CSS Minifier Tool</h3>
-    <p>Compress and minify CSS code instantly for smaller file sizes and faster loading.</p>
+    <p>Minify CSS code instantly by removing spaces, comments, and unnecessary formatting.</p>
   </a>
 
   <a class="card" href="/javascript-minifier/">
     <h3>JavaScript Minifier Tool</h3>
-    <p>Minify JavaScript code instantly by removing comments, spaces, and formatting.</p>
+    <p>Minify JavaScript code instantly by removing comments, spaces, and unnecessary formatting.</p>
   </a>
 
   <a class="card" href="/markdown-previewer/">
@@ -226,7 +343,7 @@
 
   <a class="card" href="/duplicate-line-remover/">
     <h3>Duplicate Line Remover Tool</h3>
-    <p>Remove duplicate lines from text instantly while keeping unique lines organized.</p>
+    <p>Remove duplicate lines from text instantly while keeping unique lines clean and organized.</p>
   </a>
 
   <a class="card" href="/json-validator/">
@@ -236,12 +353,12 @@
 
   <a class="card" href="/sql-formatter/">
     <h3>SQL Formatter Tool</h3>
-    <p>Format and beautify SQL queries instantly for cleaner database code.</p>
+    <p>Format and beautify SQL queries instantly for cleaner, easier-to-read database code.</p>
   </a>
 
   <a class="card" href="/sql-minifier/">
     <h3>SQL Minifier Tool</h3>
-    <p>Minify SQL queries instantly by removing extra spaces and line breaks.</p>
+    <p>Minify SQL queries instantly by removing extra spaces, line breaks, and comments.</p>
   </a>
 
   <a class="card" href="/regex-tester/">
@@ -257,12 +374,15 @@
 </div>
 
 <footer>
-  © 2026 Text Toolkit ·
-  <a href="/">Home</a> ·
-  <a href="/about/">About</a> ·
-  <a href="/privacy/">Privacy Policy</a> ·
-  <a href="/terms/">Terms</a> ·
-  <a href="/disclaimer/">Disclaimer</a> ·
+  © 2026 Text Toolkit
+
+  <br><br>
+
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/privacy/">Privacy Policy</a>
+  <a href="/terms/">Terms of Service</a>
+  <a href="/disclaimer/">Disclaimer</a>
   <a href="/contact/">Contact</a>
 </footer>
 
