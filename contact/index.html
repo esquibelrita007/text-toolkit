@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Contact Text Toolkit</title>
 
-  <meta name="description" content="Contact Text Toolkit for questions, feedback, bug reports, collaborations, or tool suggestions." />
+  <meta
+    name="description"
+    content="Contact Text Toolkit for questions, feedback, collaborations, bug reports, or tool suggestions."
+  />
+
   <meta name="robots" content="index, follow" />
 
-  <link rel="canonical" href="https://text-toolkit-epc.pages.dev/contact/" />
+  <link
+    rel="canonical"
+    href="https://text-toolkit-epc.pages.dev/contact/"
+  />
+
   <link rel="stylesheet" href="/styles.css" />
 
   <style>
+
     body {
       margin: 0;
       background: #000000;
@@ -20,51 +30,31 @@
       font-family: system-ui, Arial, sans-serif;
     }
 
-    a,
-    a:visited,
-    a:active {
+    a {
       color: #ff2d2d;
       text-decoration: none;
     }
 
     a:hover {
       color: #ffffff;
-      text-decoration: none;
     }
 
-    nav a,
-    nav a:visited,
-    nav a:active {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-      opacity: 0.75;
-    }
-
-    .page-wrap {
-      max-width: 850px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .contact-title {
-      font-size: 52px;
+    header {
       text-align: center;
-      margin-top: 60px;
-      margin-bottom: 10px;
-      color: #ffffff;
+      padding: 70px 20px 40px;
+    }
+
+    h1 {
+      font-size: 54px;
+      margin-bottom: 12px;
     }
 
     .contact-word {
       color: #ff2d2d;
-      text-shadow: 0 0 18px rgba(255, 0, 0, 0.45);
+      text-shadow: 0 0 14px rgba(255,0,0,0.35);
     }
 
     .subtitle {
-      text-align: center;
       color: #aaaaaa;
       max-width: 700px;
       margin: auto;
@@ -72,89 +62,79 @@
       font-size: 16px;
     }
 
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 20px 20px 80px;
+    }
+
     .contact-card {
       background: #0a0a0a;
       border: 1px solid #222222;
       border-radius: 18px;
       padding: 34px;
-      margin-top: 35px;
-      box-shadow: 0 0 28px rgba(255, 0, 0, 0.08);
+      margin-top: 20px;
     }
 
     .contact-card h2 {
       margin-top: 0;
       font-size: 30px;
-      color: #ffffff;
+      margin-bottom: 14px;
     }
 
     .contact-card p {
       color: #aaaaaa;
       line-height: 1.8;
+      font-size: 15px;
     }
 
-    .email-link,
-    .email-link:visited,
-    .email-link:active {
-      display: inline-block;
-      margin-top: 10px;
-      margin-bottom: 24px;
-      color: #ff2d2d;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .email-link:hover {
-      color: #ffffff;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      box-sizing: border-box;
-      margin-bottom: 18px;
-      padding: 16px;
+    .email-box {
+      margin-top: 24px;
+      padding: 22px;
       background: #000000;
       border: 1px solid #222222;
-      border-radius: 12px;
-      color: #ffffff;
-      font-size: 15px;
-      font-family: system-ui, Arial, sans-serif;
+      border-radius: 14px;
     }
 
-    .contact-form textarea {
-      min-height: 190px;
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: #ff2d2d;
-      box-shadow: 0 0 12px rgba(255, 0, 0, 0.16);
-    }
-
-    .btn {
-      width: 100%;
-      padding: 16px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(90deg, #ff1a1a, #ff3c3c);
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-    }
-
-    .small-note {
-      margin-top: 20px;
+    .email-label {
       color: #777777;
+      font-size: 13px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .email-link {
+      color: #ff2d2d;
+      font-size: 22px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .info-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .info-box {
+      background: #000000;
+      border: 1px solid #222222;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: #999999;
       font-size: 14px;
       line-height: 1.7;
     }
@@ -164,97 +144,99 @@
       padding: 40px 20px;
       color: #777777;
       border-top: 1px solid #222222;
-      margin-top: 70px;
       font-size: 14px;
     }
 
-    footer a,
-    footer a:visited,
-    footer a:active {
+    footer a {
       color: #aaaaaa;
-      text-decoration: none;
       margin: 0 10px;
     }
 
     footer a:hover {
       color: #ffffff;
     }
+
   </style>
 </head>
 
 <body>
 
-<nav>
-  <img
-    class="nav-logo"
-    src="/assets/after-hours-void-logo.png"
-    alt="After Hours Void Logo"
-  />
+<header>
 
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/privacy/">Privacy</a>
-  <a href="/terms/">Terms</a>
-  <a href="/contact/">Contact</a>
-</nav>
-
-<div class="page-wrap">
-
-  <h1 class="contact-title">
+  <h1>
     <span class="contact-word">Contact</span> Text Toolkit
   </h1>
 
   <p class="subtitle">
-    Questions, feedback, bug reports, collaborations, or ideas for future tools.
+    Questions, feedback, collaborations, bug reports,
+    or ideas for future tools.
   </p>
+
+</header>
+
+<div class="container">
 
   <div class="contact-card">
 
     <h2>Get In Touch</h2>
 
     <p>
-      Have a suggestion or found something broken?
-      Send a message below or email directly.
+      Have a suggestion, found a bug, or want to collaborate?
+      Feel free to reach out anytime.
     </p>
 
-    <a class="email-link" href="mailto:afterhoursvoid@gmail.com">
-      afterhoursvoid@gmail.com
-    </a>
+    <div class="email-box">
 
-    <div class="contact-form">
+      <div class="email-label">
+        Contact Email
+      </div>
 
-      <input
-        type="text"
-        id="name"
-        placeholder="Your name"
-      />
-
-      <input
-        type="email"
-        id="email"
-        placeholder="Your email"
-      />
-
-      <textarea
-        id="message"
-        placeholder="Write your message here..."
-      ></textarea>
-
-      <button class="btn" type="button" onclick="sendMessage()">
-        Send Message
-      </button>
+      <a
+        class="email-link"
+        href="mailto:afterhoursvoid@gmail.com"
+      >
+        afterhoursvoid@gmail.com
+      </a>
 
     </div>
 
-    <p class="small-note">
-      The send button opens Gmail with your message filled in. You can review it before sending.
-    </p>
+    <div class="info-grid">
+
+      <div class="info-box">
+        <h3>Tool Suggestions</h3>
+
+        <p>
+          Have an idea for a useful text, SEO,
+          writing, or developer tool? Suggestions are welcome.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <h3>Bug Reports</h3>
+
+        <p>
+          Found something broken or not working correctly?
+          Include the page and issue details when reporting.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <h3>Collaborations</h3>
+
+        <p>
+          For partnerships, creator collaborations,
+          or business inquiries, contact by email.
+        </p>
+      </div>
+
+    </div>
 
   </div>
 
 </div>
 
 <footer>
+
   © 2026 Text Toolkit
 
   <br><br>
@@ -265,36 +247,8 @@
   <a href="/terms/">Terms of Service</a>
   <a href="/disclaimer/">Disclaimer</a>
   <a href="/contact/">Contact</a>
+
 </footer>
-
-<script>
-function sendMessage() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (!name || !email || !message) {
-    alert("Please fill out your name, email, and message.");
-    return;
-  }
-
-  const subject = encodeURIComponent("Text Toolkit Contact Message");
-
-  const body = encodeURIComponent(
-    "Name: " + name + "\n" +
-    "Email: " + email + "\n\n" +
-    "Message:\n" + message
-  );
-
-  window.open(
-    "https://mail.google.com/mail/?view=cm&fs=1&to=afterhoursvoid@gmail.com&su=" +
-    subject +
-    "&body=" +
-    body,
-    "_blank"
-  );
-}
-</script>
 
 </body>
 </html>
