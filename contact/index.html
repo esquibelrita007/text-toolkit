@@ -30,13 +30,47 @@
       font-family: system-ui, Arial, sans-serif;
     }
 
-    a {
-      color: #ff2d2d;
-      text-decoration: none;
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 14px 16px;
+      background: linear-gradient(
+        90deg,
+        #ff1a1a,
+        #ff3c3c,
+        #ff1a1a
+      );
+      border-bottom: 1px solid #ff4d4d;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 0 18px rgba(255, 0, 0, 0.35);
     }
 
-    a:hover {
+    .nav-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #000000;
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 0 10px rgba(255,0,0,0.35);
+    }
+
+    nav a {
       color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.75;
     }
 
     header {
@@ -99,16 +133,56 @@
     .email-label {
       color: #777777;
       font-size: 13px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
+    }
+
+    .email-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .email-link {
       color: #ff2d2d;
       font-size: 22px;
       font-weight: 700;
+      text-decoration: none;
       word-break: break-word;
+    }
+
+    .email-link:hover {
+      color: #ffffff;
+    }
+
+    .copy-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid #333333;
+      background: #111111;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease;
+      font-size: 18px;
+    }
+
+    .copy-btn:hover {
+      border-color: #ff2d2d;
+      box-shadow: 0 0 12px rgba(255,0,0,0.18);
+      transform: translateY(-1px);
+    }
+
+    .copy-message {
+      margin-top: 12px;
+      color: #ff2d2d;
+      font-size: 14px;
+      display: none;
     }
 
     .info-grid {
@@ -149,6 +223,7 @@
 
     footer a {
       color: #aaaaaa;
+      text-decoration: none;
       margin: 0 10px;
     }
 
@@ -161,6 +236,22 @@
 
 <body>
 
+<nav>
+
+  <img
+    class="nav-logo"
+    src="/assets/after-hours-void-logo.png"
+    alt="After Hours Void Logo"
+  />
+
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="/terms/">Terms</a>
+  <a href="/contact/">Contact</a>
+
+</nav>
+
 <header>
 
   <h1>
@@ -168,8 +259,8 @@
   </h1>
 
   <p class="subtitle">
-    Questions, feedback, collaborations, bug reports,
-    or ideas for future tools.
+    Questions, feedback, bug reports,
+    collaborations, or ideas for future tools.
   </p>
 
 </header>
@@ -181,8 +272,9 @@
     <h2>Get In Touch</h2>
 
     <p>
-      Have a suggestion, found a bug, or want to collaborate?
-      Feel free to reach out anytime.
+      Have a suggestion, found a bug,
+      or want to collaborate?
+      Reach out anytime.
     </p>
 
     <div class="email-box">
@@ -191,12 +283,31 @@
         Contact Email
       </div>
 
-      <a
-        class="email-link"
-        href="mailto:afterhoursvoid@gmail.com"
+      <div class="email-row">
+
+        <a
+          class="email-link"
+          href="mailto:afterhoursvoid@gmail.com"
+        >
+          afterhoursvoid@gmail.com
+        </a>
+
+        <button
+          class="copy-btn"
+          onclick="copyEmail()"
+          title="Copy Email"
+        >
+          📋
+        </button>
+
+      </div>
+
+      <div
+        class="copy-message"
+        id="copyMessage"
       >
-        afterhoursvoid@gmail.com
-      </a>
+        Email copied to clipboard.
+      </div>
 
     </div>
 
@@ -206,8 +317,9 @@
         <h3>Tool Suggestions</h3>
 
         <p>
-          Have an idea for a useful text, SEO,
-          writing, or developer tool? Suggestions are welcome.
+          Have an idea for a useful text,
+          SEO, writing, or developer tool?
+          Suggestions are welcome.
         </p>
       </div>
 
@@ -249,6 +361,27 @@
   <a href="/contact/">Contact</a>
 
 </footer>
+
+<script>
+
+function copyEmail() {
+
+  navigator.clipboard.writeText(
+    "afterhoursvoid@gmail.com"
+  );
+
+  const message =
+    document.getElementById("copyMessage");
+
+  message.style.display = "block";
+
+  setTimeout(() => {
+    message.style.display = "none";
+  }, 2000);
+
+}
+
+</script>
 
 </body>
 </html>
