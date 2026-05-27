@@ -6,164 +6,251 @@
 
   <title>Contact Text Toolkit</title>
 
-  <meta name="description" content="Contact Text Toolkit for feedback, questions, bug reports, tool suggestions, collaborations, or general website inquiries." />
-
+  <meta name="description" content="Contact Text Toolkit for questions, feedback, bug reports, collaborations, or tool suggestions." />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://text-toolkit-epc.pages.dev/contact/" />
   <link rel="stylesheet" href="/styles.css" />
 
   <style>
+    body {
+      background: #000000;
+      color: #ffffff;
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0;
+    }
 
-    .contact-form {
-      margin-top: 30px;
+    .contact-wrapper {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .contact-box {
       background: #0a0a0a;
       border: 1px solid #222222;
-      border-radius: 14px;
-      padding: 24px;
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 30px;
+      box-shadow: 0 0 22px rgba(255, 0, 0, 0.08);
+    }
+
+    .contact-highlight {
+      color: #ff3c3c;
+      text-shadow: 0 0 14px rgba(255, 60, 60, 0.4);
+    }
+
+    .contact-box h2 {
+      margin-top: 0;
+      color: #ffffff;
+      font-size: 30px;
+    }
+
+    .contact-box p {
+      color: #aaaaaa;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ff3c3c;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-email:hover {
+      color: #ffffff;
+    }
+
+    .contact-form {
+      margin-top: 28px;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      margin-top: 12px;
-      padding: 14px;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+      padding: 15px;
       background: #000000;
       border: 1px solid #222222;
       border-radius: 10px;
       color: #ffffff;
       font-size: 15px;
-      box-sizing: border-box;
     }
 
     .contact-form textarea {
-      min-height: 160px;
+      min-height: 180px;
       resize: vertical;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: #ff0000;
+      border-color: #ff3c3c;
+      box-shadow: 0 0 10px rgba(255, 60, 60, 0.18);
     }
 
     .btn {
-      margin-top: 18px;
-      padding: 12px 18px;
-      background: #111111;
-      border: 1px solid #222222;
-      color: #ffffff;
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(90deg, #ff1a1a, #ff3c3c);
+      border: none;
       border-radius: 10px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
-      font-size: 15px;
       transition: 0.2s ease;
     }
 
     .btn:hover {
-      border-color: #ff0000;
+      opacity: 0.9;
+      transform: translateY(-1px);
     }
 
-    .contact-note {
+    .note {
       margin-top: 18px;
-      color: #999999;
+      color: #888888;
+      font-size: 14px;
       line-height: 1.7;
     }
 
+    footer {
+      text-align: center;
+      padding: 34px 20px;
+      color: #777777;
+      border-top: 1px solid #222222;
+      font-size: 14px;
+      margin-top: 70px;
+    }
+
+    footer a {
+      color: #aaaaaa;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Contact Text Toolkit</h1>
+<nav>
+  <img
+    class="nav-logo"
+    src="/assets/after-hours-void-logo.png"
+    alt="After Hours Void Logo"
+  />
 
-  <p>
-    Questions, feedback, ideas, bug reports, or just want to say hi?
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/privacy/">Privacy</a>
+  <a href="/terms/">Terms</a>
+  <a href="/contact/">Contact</a>
+</nav>
+
+<header>
+  <h1><span class="contact-highlight">Contact</span> Text Toolkit</h1>
+
+  <p class="subtitle">
+    Questions, feedback, collaborations, bug reports, or tool suggestions.
   </p>
 </header>
 
-<div class="container seo-section">
+<div class="contact-wrapper">
 
-  <h2>Get In Touch</h2>
+  <div class="contact-box">
 
-  <p>
-    If you have suggestions for new tools, found something broken, want to collaborate,
-    or simply have feedback about the website, feel free to reach out.
-  </p>
+    <h2>Get In Touch</h2>
 
-  <div class="contact-form">
+    <p>
+      Have a tool idea, found a bug, or want to collaborate?
+      Send a message using the form below or email directly.
+    </p>
 
-    <input type="text" id="name" placeholder="Your name" />
+    <a class="contact-email" href="mailto:afterhoursvoid@gmail.com">
+      afterhoursvoid@gmail.com
+    </a>
 
-    <input type="email" id="email" placeholder="Your email" />
+    <form
+      class="contact-form"
+      action="https://formsubmit.co/afterhoursvoid@gmail.com"
+      method="POST"
+    >
 
-    <textarea id="message" placeholder="Write your message here..."></textarea>
+      <input type="hidden" name="_captcha" value="false" />
 
-    <button class="btn" onclick="sendMessage()">
-      Send Message
-    </button>
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Text Toolkit Contact Form Message"
+      />
 
-    <p class="contact-note">
-      Or email directly at:
-      <br><br>
-      <a href="mailto:afterhoursvoid@gmail.com">afterhoursvoid@gmail.com</a>
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      />
+
+      <input
+        type="hidden"
+        name="_next"
+        value="https://text-toolkit-epc.pages.dev/contact/"
+      />
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your email"
+        required
+      />
+
+      <textarea
+        name="message"
+        placeholder="Write your message here..."
+        required
+      ></textarea>
+
+      <button class="btn" type="submit">
+        Send Message
+      </button>
+
+    </form>
+
+    <p class="note">
+      Note: the first form submission may require email confirmation from FormSubmit before messages deliver normally.
     </p>
 
   </div>
 
-  <h2>Tool Suggestions Welcome</h2>
-
-  <p>
-    Text Toolkit is constantly growing with new writing, SEO, formatting,
-    productivity, and developer tools. Suggestions are always appreciated.
-  </p>
-
-  <h2>More Pages</h2>
-
-  <p>
-    <a href="/">Home</a> ·
-    <a href="/about/">About</a> ·
-    <a href="/privacy/">Privacy Policy</a> ·
-    <a href="/terms/">Terms of Service</a> ·
-    <a href="/disclaimer/">Disclaimer</a>
-  </p>
-
 </div>
 
 <footer>
-  © 2026 Text Toolkit ·
-  <a href="/">Home</a> ·
-  <a href="/about/">About</a> ·
-  <a href="/privacy/">Privacy Policy</a> ·
-  <a href="/terms/">Terms of Service</a> ·
+  © 2026 Text Toolkit
+
+  <br><br>
+
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/privacy/">Privacy Policy</a>
+  <a href="/terms/">Terms of Service</a>
   <a href="/disclaimer/">Disclaimer</a>
+  <a href="/contact/">Contact</a>
 </footer>
-
-<script>
-
-function sendMessage() {
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (!name || !email || !message) {
-    alert("Please fill out all fields.");
-    return;
-  }
-
-  const subject = encodeURIComponent("Text Toolkit Contact Form");
-  const body = encodeURIComponent(
-    "Name: " + name + "\n\n" +
-    "Email: " + email + "\n\n" +
-    "Message:\n" + message
-  );
-
-  window.location.href =
-    `mailto:afterhoursvoid@gmail.com?subject=${subject}&body=${body}`;
-}
-
-</script>
 
 </body>
 </html>
