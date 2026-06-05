@@ -30,7 +30,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 0 18px rgba(255, 0, 0, 0.35);
+      box-shadow: 0 0 18px rgba(255,0,0,0.35);
     }
 
     .nav-logo {
@@ -49,10 +49,6 @@
       font-weight: 700;
     }
 
-    nav a:hover {
-      opacity: 0.75;
-    }
-
     header {
       text-align: center;
       padding: 100px 20px 65px;
@@ -68,7 +64,6 @@
       color: #ff4d4d;
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
@@ -77,12 +72,10 @@
       line-height: 1.05;
       margin: 0 auto;
       max-width: 980px;
-      letter-spacing: -2px;
     }
 
     .hero-highlight {
       color: #ff2d2d;
-      text-shadow: 0 0 18px rgba(255,0,0,0.28);
     }
 
     .subtitle {
@@ -111,7 +104,6 @@
     .hero-btn-primary {
       background: linear-gradient(90deg, #ff1a1a, #ff3c3c);
       color: #fff;
-      box-shadow: 0 0 18px rgba(255,0,0,0.22);
     }
 
     .hero-btn-secondary {
@@ -127,22 +119,6 @@
       text-align: center;
     }
 
-    .trust-section h2,
-    .section-title,
-    .seo-section h2 {
-      font-size: 38px;
-      margin-bottom: 16px;
-    }
-
-    .trust-section p,
-    .seo-section p {
-      color: #aaa;
-      line-height: 1.8;
-      max-width: 760px;
-      margin: auto;
-      font-size: 16px;
-    }
-
     .trust-grid {
       margin-top: 42px;
       display: grid;
@@ -150,7 +126,8 @@
       gap: 22px;
     }
 
-    .trust-card {
+    .trust-card,
+    .card {
       background: #0a0a0a;
       border: 1px solid #222;
       border-radius: 18px;
@@ -163,6 +140,7 @@
 
     .section-title {
       text-align: center;
+      font-size: 38px;
       margin: 0 0 42px;
     }
 
@@ -175,20 +153,17 @@
     }
 
     .card {
-      background: #0a0a0a;
-      border: 1px solid #222;
-      border-radius: 18px;
-      padding: 28px;
       text-decoration: none;
       color: #fff;
-      transition: 0.25s ease;
       display: block;
+      transition: 0.25s ease;
+      cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-5px);
       border-color: #ff3c3c;
-      box-shadow: 0 0 22px rgba(255, 60, 60, 0.22);
+      box-shadow: 0 0 22px rgba(255,60,60,0.22);
     }
 
     .tool-icon {
@@ -216,6 +191,12 @@
       text-align: center;
     }
 
+    .seo-section p,
+    .trust-section p {
+      color: #aaa;
+      line-height: 1.8;
+    }
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -230,17 +211,9 @@
       margin: 0 10px;
     }
 
-    footer a:hover {
-      color: #fff;
-    }
-
     @media (max-width: 700px) {
       h1 {
         font-size: 42px;
-      }
-
-      .subtitle {
-        font-size: 16px;
       }
     }
   </style>
@@ -268,8 +241,7 @@
 
   <p class="subtitle">
     Clean, fast, browser-based utilities for writers, creators, marketers,
-    developers, and SEO professionals. Count, clean, format, optimize,
-    generate, convert, and improve content instantly.
+    developers, and SEO professionals.
   </p>
 
   <div class="hero-buttons">
@@ -280,32 +252,13 @@
 
 <section class="trust-section">
   <h2>Built For Productivity</h2>
-
-  <p>
-    Text Toolkit helps simplify writing, formatting, SEO optimization,
-    coding workflows, and everyday digital tasks.
-  </p>
+  <p>Text Toolkit helps simplify writing, formatting, SEO optimization, coding workflows, and everyday digital tasks.</p>
 
   <div class="trust-grid">
-    <div class="trust-card">
-      <h3>⚡ Fast & Lightweight</h3>
-      <p>Instant browser-based tools with no downloads or installations required.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>🛠️ Free Utilities</h3>
-      <p>Helpful tools for writing, formatting, SEO, productivity, and development workflows.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>🔒 Privacy Focused</h3>
-      <p>Simple browser-based utilities designed for fast everyday use.</p>
-    </div>
-
-    <div class="trust-card">
-      <h3>🚀 Creator Friendly</h3>
-      <p>Built for bloggers, marketers, writers, developers, creators, and online professionals.</p>
-    </div>
+    <div class="trust-card"><h3>⚡ Fast & Lightweight</h3><p>Instant browser-based tools with no downloads required.</p></div>
+    <div class="trust-card"><h3>🛠️ Free Utilities</h3><p>Helpful tools for writing, SEO, productivity, and development.</p></div>
+    <div class="trust-card"><h3>🔒 Privacy Focused</h3><p>Simple browser-based utilities designed for fast everyday use.</p></div>
+    <div class="trust-card"><h3>🚀 Creator Friendly</h3><p>Built for writers, developers, creators, and online professionals.</p></div>
   </div>
 </section>
 
@@ -314,193 +267,76 @@
 
   <div class="container">
 
-    <a class="card" href="/word-counter.html">
-      <span class="tool-icon">📝</span>
-      <h3>Word Counter</h3>
-      <p>Count words, characters, sentences, and paragraphs instantly.</p>
-    </a>
+    <a class="card" href="/word-counter.html" data-tool="word-counter"><span class="tool-icon">📝</span><h3>Word Counter</h3><p>Count words, characters, sentences, and paragraphs instantly.</p></a>
 
-    <a class="card" href="/character-counter.html">
-      <span class="tool-icon">🔢</span>
-      <h3>Character Counter</h3>
-      <p>Count characters, letters, spaces, and text length.</p>
-    </a>
+    <a class="card" href="/character-counter.html" data-tool="character-counter"><span class="tool-icon">🔢</span><h3>Character Counter</h3><p>Count characters, letters, spaces, and text length.</p></a>
 
-    <a class="card" href="/case-converter.html">
-      <span class="tool-icon">🔠</span>
-      <h3>Case Converter</h3>
-      <p>Convert text to uppercase, lowercase, title case, and sentence case.</p>
-    </a>
+    <a class="card" href="/case-converter.html" data-tool="case-converter"><span class="tool-icon">🔠</span><h3>Case Converter</h3><p>Convert text to uppercase, lowercase, title case, and sentence case.</p></a>
 
-    <a class="card" href="/slug-generator.html">
-      <span class="tool-icon">🔗</span>
-      <h3>Slug Generator</h3>
-      <p>Create clean SEO-friendly URL slugs.</p>
-    </a>
+    <a class="card" href="/slug-generator.html" data-tool="slug-generator"><span class="tool-icon">🔗</span><h3>Slug Generator</h3><p>Create clean SEO-friendly URL slugs.</p></a>
 
-    <a class="card" href="/text-cleaner.html">
-      <span class="tool-icon">🧹</span>
-      <h3>Text Cleaner</h3>
-      <p>Remove extra spaces, line breaks, and messy formatting.</p>
-    </a>
+    <a class="card" href="/text-cleaner.html" data-tool="text-cleaner"><span class="tool-icon">🧹</span><h3>Text Cleaner</h3><p>Remove extra spaces, line breaks, and messy formatting.</p></a>
 
-    <a class="card" href="/json-formatter.html">
-      <span class="tool-icon">{ }</span>
-      <h3>JSON Formatter</h3>
-      <p>Format, clean, and organize JSON code.</p>
-    </a>
+    <a class="card" href="/json-formatter.html" data-tool="json-formatter"><span class="tool-icon">{ }</span><h3>JSON Formatter</h3><p>Format, clean, and organize JSON code.</p></a>
 
-    <a class="card" href="/password-generator.html">
-      <span class="tool-icon">🔐</span>
-      <h3>Password Generator</h3>
-      <p>Generate strong random passwords.</p>
-    </a>
+    <a class="card" href="/password-generator.html" data-tool="password-generator"><span class="tool-icon">🔐</span><h3>Password Generator</h3><p>Generate strong random passwords.</p></a>
 
-    <a class="card" href="/keyword-density-checker.html">
-      <span class="tool-icon">📊</span>
-      <h3>Keyword Density Checker</h3>
-      <p>Analyze keyword frequency for SEO writing.</p>
-    </a>
+    <a class="card" href="/keyword-density-checker.html" data-tool="keyword-density-checker"><span class="tool-icon">📊</span><h3>Keyword Density Checker</h3><p>Analyze keyword frequency for SEO writing.</p></a>
 
-    <a class="card" href="/meta-tag-generator.html">
-      <span class="tool-icon">🏷️</span>
-      <h3>Meta Tag Generator</h3>
-      <p>Create SEO title, description, and meta tags.</p>
-    </a>
+    <a class="card" href="/meta-tag-generator.html" data-tool="meta-tag-generator"><span class="tool-icon">🏷️</span><h3>Meta Tag Generator</h3><p>Create SEO title, description, and meta tags.</p></a>
 
-    <a class="card" href="/title-generator.html">
-      <span class="tool-icon">✨</span>
-      <h3>Title Generator</h3>
-      <p>Generate clickable titles for blogs, pages, and videos.</p>
-    </a>
+    <a class="card" href="/title-generator.html" data-tool="title-generator"><span class="tool-icon">✨</span><h3>Title Generator</h3><p>Generate clickable titles for blogs, pages, and videos.</p></a>
 
-    <a class="card" href="/description-generator.html">
-      <span class="tool-icon">📄</span>
-      <h3>Description Generator</h3>
-      <p>Create descriptions for SEO pages, posts, and videos.</p>
-    </a>
+    <a class="card" href="/description-generator.html" data-tool="description-generator"><span class="tool-icon">📄</span><h3>Description Generator</h3><p>Create descriptions for SEO pages, posts, and videos.</p></a>
 
-    <a class="card" href="/hashtag-generator.html">
-      <span class="tool-icon">#️⃣</span>
-      <h3>Hashtag Generator</h3>
-      <p>Generate hashtags for YouTube, TikTok, Instagram, and social posts.</p>
-    </a>
+    <a class="card" href="/hashtag-generator.html" data-tool="hashtag-generator"><span class="tool-icon">#️⃣</span><h3>Hashtag Generator</h3><p>Generate hashtags for YouTube, TikTok, Instagram, and social posts.</p></a>
 
-    <a class="card" href="/youtube-title-generator.html">
-      <span class="tool-icon">▶️</span>
-      <h3>YouTube Title Generator</h3>
-      <p>Create high-click YouTube video title ideas.</p>
-    </a>
+    <a class="card" href="/youtube-title-generator.html" data-tool="youtube-title-generator"><span class="tool-icon">▶️</span><h3>YouTube Title Generator</h3><p>Create high-click YouTube video title ideas.</p></a>
 
-    <a class="card" href="/youtube-description-generator.html">
-      <span class="tool-icon">🎬</span>
-      <h3>YouTube Description Generator</h3>
-      <p>Write SEO-friendly YouTube descriptions.</p>
-    </a>
+    <a class="card" href="/youtube-description-generator.html" data-tool="youtube-description-generator"><span class="tool-icon">🎬</span><h3>YouTube Description Generator</h3><p>Write SEO-friendly YouTube descriptions.</p></a>
 
-    <a class="card" href="/youtube-tags-generator.html">
-      <span class="tool-icon">🏷️</span>
-      <h3>YouTube Tags Generator</h3>
-      <p>Generate searchable YouTube tags.</p>
-    </a>
+    <a class="card" href="/youtube-tags-generator.html" data-tool="youtube-tags-generator"><span class="tool-icon">🏷️</span><h3>YouTube Tags Generator</h3><p>Generate searchable YouTube tags.</p></a>
 
-    <a class="card" href="/blog-idea-generator.html">
-      <span class="tool-icon">💡</span>
-      <h3>Blog Idea Generator</h3>
-      <p>Generate blog post ideas and content angles.</p>
-    </a>
+    <a class="card" href="/blog-idea-generator.html" data-tool="blog-idea-generator"><span class="tool-icon">💡</span><h3>Blog Idea Generator</h3><p>Generate blog post ideas and content angles.</p></a>
 
-    <a class="card" href="/headline-analyzer.html">
-      <span class="tool-icon">🧠</span>
-      <h3>Headline Analyzer</h3>
-      <p>Check and improve headline strength.</p>
-    </a>
+    <a class="card" href="/headline-analyzer.html" data-tool="headline-analyzer"><span class="tool-icon">🧠</span><h3>Headline Analyzer</h3><p>Check and improve headline strength.</p></a>
 
-    <a class="card" href="/readability-checker.html">
-      <span class="tool-icon">📖</span>
-      <h3>Readability Checker</h3>
-      <p>Estimate how easy your text is to read.</p>
-    </a>
+    <a class="card" href="/readability-checker.html" data-tool="readability-checker"><span class="tool-icon">📖</span><h3>Readability Checker</h3><p>Estimate how easy your text is to read.</p></a>
 
-    <a class="card" href="/grammar-helper.html">
-      <span class="tool-icon">✅</span>
-      <h3>Grammar Helper</h3>
-      <p>Clean up common writing issues and awkward phrasing.</p>
-    </a>
+    <a class="card" href="/grammar-helper.html" data-tool="grammar-helper"><span class="tool-icon">✅</span><h3>Grammar Helper</h3><p>Clean up common writing issues and awkward phrasing.</p></a>
 
-    <a class="card" href="/email-subject-generator.html">
-      <span class="tool-icon">📧</span>
-      <h3>Email Subject Generator</h3>
-      <p>Create stronger subject lines for emails and newsletters.</p>
-    </a>
+    <a class="card" href="/email-subject-generator.html" data-tool="email-subject-generator"><span class="tool-icon">📧</span><h3>Email Subject Generator</h3><p>Create stronger subject lines for emails and newsletters.</p></a>
 
-    <a class="card" href="/html-formatter.html">
-      <span class="tool-icon">🌐</span>
-      <h3>HTML Formatter</h3>
-      <p>Clean and format HTML code.</p>
-    </a>
+    <a class="card" href="/html-formatter.html" data-tool="html-formatter"><span class="tool-icon">🌐</span><h3>HTML Formatter</h3><p>Clean and format HTML code.</p></a>
 
-    <a class="card" href="/css-minifier.html">
-      <span class="tool-icon">🎨</span>
-      <h3>CSS Minifier</h3>
-      <p>Compress CSS for faster loading pages.</p>
-    </a>
+    <a class="card" href="/css-minifier.html" data-tool="css-minifier"><span class="tool-icon">🎨</span><h3>CSS Minifier</h3><p>Compress CSS for faster loading pages.</p></a>
 
-    <a class="card" href="/html-entity-encoder.html">
-      <span class="tool-icon">🔣</span>
-      <h3>HTML Entity Encoder</h3>
-      <p>Encode and decode HTML entities.</p>
-    </a>
+    <a class="card" href="/html-entity-encoder.html" data-tool="html-entity-encoder"><span class="tool-icon">🔣</span><h3>HTML Entity Encoder</h3><p>Encode and decode HTML entities.</p></a>
 
-    <a class="card" href="/url-encoder-decoder.html">
-      <span class="tool-icon">🌍</span>
-      <h3>URL Encoder / Decoder</h3>
-      <p>Encode and decode URLs safely.</p>
-    </a>
+    <a class="card" href="/url-encoder-decoder.html" data-tool="url-encoder-decoder"><span class="tool-icon">🌍</span><h3>URL Encoder / Decoder</h3><p>Encode and decode URLs safely.</p></a>
 
-    <a class="card" href="/base64-encoder-decoder.html">
-      <span class="tool-icon">🧬</span>
-      <h3>Base64 Encoder / Decoder</h3>
-      <p>Convert text to and from Base64.</p>
-    </a>
+    <a class="card" href="/base64-encoder-decoder.html" data-tool="base64-encoder-decoder"><span class="tool-icon">🧬</span><h3>Base64 Encoder / Decoder</h3><p>Convert text to and from Base64.</p></a>
 
-    <a class="card" href="/qr-code-generator.html">
-      <span class="tool-icon">▦</span>
-      <h3>QR Code Generator</h3>
-      <p>Create simple QR codes for links and text.</p>
-    </a>
+    <a class="card" href="/qr-code-generator.html" data-tool="qr-code-generator"><span class="tool-icon">▦</span><h3>QR Code Generator</h3><p>Create simple QR codes for links and text.</p></a>
 
-    <a class="card" href="/markdown-preview.html">
-      <span class="tool-icon">⬇️</span>
-      <h3>Markdown Preview</h3>
-      <p>Preview Markdown formatting instantly.</p>
-    </a>
+    <a class="card" href="/markdown-preview.html" data-tool="markdown-preview"><span class="tool-icon">⬇️</span><h3>Markdown Preview</h3><p>Preview Markdown formatting instantly.</p></a>
 
-    <a class="card" href="/text-to-html.html">
-      <span class="tool-icon">🧾</span>
-      <h3>Text to HTML</h3>
-      <p>Convert plain text into simple HTML.</p>
-    </a>
+    <a class="card" href="/text-to-html.html" data-tool="text-to-html"><span class="tool-icon">🧾</span><h3>Text to HTML</h3><p>Convert plain text into simple HTML.</p></a>
 
   </div>
 </section>
 
 <section class="seo-section">
   <h2>Simple Online Tools That Save Time</h2>
-
   <p>
     Text Toolkit is a growing collection of free online tools for creators,
-    writers, marketers, developers, students, and everyday users. Use these
-    utilities to improve your writing, format content, prepare SEO-friendly
-    text, clean up code, and complete simple digital tasks faster.
+    writers, marketers, developers, students, and everyday users.
   </p>
 </section>
 
 <footer>
   © 2026 Text Toolkit
-
   <br><br>
-
   <a href="/">Home</a>
   <a href="/about.html">About</a>
   <a href="/privacy.html">Privacy Policy</a>
@@ -508,6 +344,40 @@
   <a href="/disclaimer.html">Disclaimer</a>
   <a href="/contact.html">Contact</a>
 </footer>
+
+<script>
+  document.querySelectorAll("[data-tool]").forEach(function(card) {
+    card.addEventListener("click", async function(event) {
+      event.preventDefault();
+
+      const tool = card.getAttribute("data-tool");
+
+      const possiblePaths = [
+        "/" + tool + ".html",
+        "/" + tool + "/",
+        "/" + tool + "/index.html",
+        "/tools/" + tool + ".html",
+        "/tools/" + tool + "/",
+        "/tools/" + tool + "/index.html"
+      ];
+
+      for (const path of possiblePaths) {
+        try {
+          const response = await fetch(path, { method: "HEAD" });
+
+          if (response.ok) {
+            window.location.href = path;
+            return;
+          }
+        } catch (error) {}
+      }
+
+      alert(
+        "This tool page was not found. Create the tool file first, then make sure the filename matches: " + tool + ".html"
+      );
+    });
+  });
+</script>
 
 </body>
 </html>
