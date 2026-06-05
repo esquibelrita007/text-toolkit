@@ -1,7 +1,28 @@
- /character-counter /character-counter/ 301
- /word-counter /word-counter/ 301
- /case-converter /case-converter/ 301
- /json-formatter /json-formatter/ 301
- /password-generator /password-generator/ 301
-
- /* /index.html 200
+/word-counter /word-counter.html 301
+/character-counter /character-counter.html 301
+/case-converter /case-converter.html 301
+/slug-generator /slug-generator.html 301
+/text-cleaner /text-cleaner.html 301
+/json-formatter /json-formatter.html 301
+/password-generator /password-generator.html 301
+/keyword-density-checker /keyword-density-checker.html 301
+/meta-tag-generator /meta-tag-generator.html 301
+/title-generator /title-generator.html 301
+/description-generator /description-generator.html 301
+/hashtag-generator /hashtag-generator.html 301
+/youtube-title-generator /youtube-title-generator.html 301
+/youtube-description-generator /youtube-description-generator.html 301
+/youtube-tags-generator /youtube-tags-generator.html 301
+/blog-idea-generator /blog-idea-generator.html 301
+/headline-analyzer /headline-analyzer.html 301
+/readability-checker /readability-checker.html 301
+/grammar-helper /grammar-helper.html 301
+/email-subject-generator /email-subject-generator.html 301
+/html-formatter /html-formatter.html 301
+/css-minifier /css-minifier.html 301
+/html-entity-encoder /html-entity-encoder.html 301
+/url-encoder-decoder /url-encoder-decoder.html 301
+/base64-encoder-decoder /base64-encoder-decoder.html 301
+/qr-code-generator /qr-code-generator.html 301
+/markdown-preview /markdown-preview.html 301
+/text-to-html /text-to-html.html 301
